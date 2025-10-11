@@ -1,0 +1,45 @@
+{
+  "meta": {
+    "title": "Studio Encantador - Business Consulting & Web Development in Hong Kong",
+    "description": "Professional business consulting and web development services for Hong Kong businesses. Expert strategy, elegant websites, and team building solutions."
+  },
+  "hero": {
+    "title": "AI-Powered Business Transformation in Hong Kong",
+    "subtitle": "We help Hong Kong businesses thrive through intelligent automation, AI consulting, and cutting-edge web development. Your trusted partner for digital transformation.",
+    "cta_primary": "Start AI Journey",
+    "cta_secondary": "View AI Solutions",
+    "trust_indicator": "AI-First Agency • Launching in Hong Kong • January 2025"
+  },
+  "services": {
+    "title": "Our Services",
+    "subtitle": "We offer comprehensive business development and web services tailored for Hong Kong's dynamic market.",
+    "strategy": {
+      "title": "Business Strategy",
+      "description": "We analyze your Hong Kong business needs and create comprehensive strategies for local market entry, growth, and regulatory compliance."
+    },
+    "web": {
+      "title": "Web Development",
+      "description": "Our team builds elegant, responsive websites optimized for Hong Kong users, with local hosting and mobile-first design."
+    },
+    "team": {
+      "title": "Team Building & Workshops",
+      "description": "Interactive sessions designed for Hong Kong's business culture, available both indoors and outdoors to suit the climate."
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "subtitle": "We're a dynamic duo launching in Hong Kong, combining technical expertise with business acumen.",
+    "mission": "To empower Hong Kong businesses with elegant, effective solutions that enhance performance and create lasting value.",
+    "vision": "To become the trusted partner for Hong Kong businesses seeking digital transformation and operational excellence."
+  },
+  "contact": {
+    "title": "Get in Touch",
+    "subtitle": "Ready to transform your Hong Kong business? Let's discuss your needs.",
+    "phone": "+852 XXXX XXXX",
+    "whatsapp": "+852 XXXX XXXX",
+    "email": "hello@encantador.co",
+    "address": "Central, Hong Kong",
+    "hours": "Monday - Friday: 9:00 AM - 6:00 PM HKT",
+    "response_time": "We respond within 2 hours during business hours"
+  }
+}
