@@ -1126,7 +1126,7 @@ Now that all tests are written and failing (RED phase), we implement the minimal
 
 - [ ] 2.1 Create basic LanguageSwitcher class structure
 
-  - [ ] Create `assets/js/language-switcher.js`:
+  - [x] Create `assets/js/language-switcher.js`:
 
     ```javascript
     class LanguageSwitcher {

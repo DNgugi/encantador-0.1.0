@@ -11,39 +11,55 @@ describe("Language Switcher", () => {
   let switcher;
 
   beforeAll(() => {
-    LanguageSwitcher = require("../../assets/js/language-switcher.js");
+    LanguageSwitcher = require("../../assets/js/languageSwitcher.js");
   });
 
   beforeEach(() => {
     document.body.innerHTML = "";
-    switcher = new LanguageSwitcher();
+    jest.clearAllMocks();
+    // Reset navigator.language to a default
+    Object.defineProperty(navigator, "language", {
+      writable: true,
+      value: "en-US",
+    });
   });
 
   describe("Language Detection", () => {
     it("should detect English as default language", () => {
+      switcher = new LanguageSwitcher();
       expect(switcher.detectLanguage()).toBe("en");
     });
 
     it("should detect Traditional Chinese from Hong Kong browser setting", () => {
-      window.navigator.language = "zh-HK";
+      Object.defineProperty(navigator, "language", {
+        writable: true,
+        value: "zh-HK",
+      });
       switcher = new LanguageSwitcher();
       expect(switcher.detectLanguage()).toBe("zh-hk");
     });
 
     it("should detect Simplified Chinese from mainland browser setting", () => {
-      window.navigator.language = "zh-CN";
+      Object.defineProperty(navigator, "language", {
+        writable: true,
+        value: "zh-CN",
+      });
       switcher = new LanguageSwitcher();
       expect(switcher.detectLanguage()).toBe("zh-cn");
     });
 
     it("should use stored language preference over browser detection", () => {
-      localStorage.getItem.mockReturnValue("zh-hk");
+      jest.spyOn(Storage.prototype, "getItem").mockReturnValue("zh-hk");
       switcher = new LanguageSwitcher();
       expect(switcher.detectLanguage()).toBe("zh-hk");
     });
 
     it("should fallback to English for unsupported languages", () => {
-      window.navigator.language = "fr-FR";
+      jest.spyOn(Storage.prototype, "getItem").mockReturnValue(null);
+      Object.defineProperty(navigator, "language", {
+        writable: true,
+        value: "fr-FR",
+      });
       switcher = new LanguageSwitcher();
       expect(switcher.detectLanguage()).toBe("en");
     });
@@ -51,25 +67,27 @@ describe("Language Switcher", () => {
 
   describe("Language Setting", () => {
     it("should set language and store preference", () => {
+      const setItemSpy = jest.spyOn(Storage.prototype, "setItem");
+      switcher = new LanguageSwitcher();
       switcher.setLanguage("zh-hk");
       expect(switcher.currentLanguage).toBe("zh-hk");
-      expect(localStorage.setItem).toHaveBeenCalledWith(
-        "preferred-language",
-        "zh-hk"
-      );
+      expect(setItemSpy).toHaveBeenCalledWith("preferred-language", "zh-hk");
     });
 
     it("should reject invalid language codes", () => {
+      const setItemSpy = jest.spyOn(Storage.prototype, "setItem");
+      switcher = new LanguageSwitcher();
       const initialLang = switcher.currentLanguage;
       switcher.setLanguage("invalid");
       expect(switcher.currentLanguage).toBe(initialLang);
-      expect(localStorage.setItem).not.toHaveBeenCalledWith(
+      expect(setItemSpy).not.toHaveBeenCalledWith(
         "preferred-language",
         "invalid"
       );
     });
 
     it("should update URL when language changes", () => {
+      switcher = new LanguageSwitcher();
       const pushStateSpy = jest
         .spyOn(window.history, "pushState")
         .mockImplementation();
@@ -81,6 +99,7 @@ describe("Language Switcher", () => {
 
   describe("Translation Loading", () => {
     it("should load translation files successfully", async () => {
+      switcher = new LanguageSwitcher();
       const mockTranslations = { hero: { title: "Test Title" } };
       fetch.mockResolvedValueOnce({
         ok: true,
@@ -93,6 +112,7 @@ describe("Language Switcher", () => {
     });
 
     it("should handle translation loading errors gracefully", async () => {
+      switcher = new LanguageSwitcher();
       fetch.mockRejectedValueOnce(new Error("Network error"));
       const translations = await switcher.loadTranslations("en");
       expect(translations).toBeNull();
@@ -101,12 +121,16 @@ describe("Language Switcher", () => {
 
   describe("Content Updates", () => {
     it("should update page content with translations", async () => {
+      switcher = new LanguageSwitcher();
       document.body.innerHTML =
         '<h1 data-translate="hero.title">Original Title</h1>';
       const mockTranslations = { hero: { title: "Translated Title" } };
 
-      switcher.translations = { en: mockTranslations };
-      switcher.currentLanguage = "en";
+      // Mock fetch to return the translations
+      fetch.mockResolvedValueOnce({
+        ok: true,
+        json: async () => mockTranslations,
+      });
 
       await switcher.updateContent();
 
@@ -117,6 +141,7 @@ describe("Language Switcher", () => {
     });
 
     it("should update meta tags with translated content", async () => {
+      switcher = new LanguageSwitcher();
       document.head.innerHTML = `
         <title>Original Title</title>
         <meta name="description" content="Original Description">
@@ -129,8 +154,11 @@ describe("Language Switcher", () => {
         },
       };
 
-      switcher.translations = { en: mockTranslations };
-      switcher.currentLanguage = "en";
+      // Mock fetch to return the translations
+      fetch.mockResolvedValueOnce({
+        ok: true,
+        json: async () => mockTranslations,
+      });
 
       await switcher.updateContent();
 
@@ -143,6 +171,7 @@ describe("Language Switcher", () => {
 
   describe("UI Integration", () => {
     it("should initialize UI components correctly", () => {
+      switcher = new LanguageSwitcher();
       document.body.innerHTML = `
         <button id="lang-dropdown">Language</button>
         <div id="lang-menu" class="hidden">
@@ -162,6 +191,7 @@ describe("Language Switcher", () => {
     });
 
     test("should handle language selection from UI", () => {
+      switcher = new LanguageSwitcher();
       document.body.innerHTML = `
         <div id="lang-menu">
           <a href="#" data-lang="zh-hk">繁體中文</a>
