@@ -1,0 +1,353 @@
+/**
+ * Contact Methods Component Styles
+ * Multiple contact methods with Hong Kong cultural elements
+ */
+
+.contact-methods {
+  padding: 3rem 0;
+  background: var(--background);
+  position: relative;
+}
+
+.contact-methods-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.contact-methods-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  text-align: center;
+  margin-bottom: 2.5rem;
+  font-family: 'Source Sans 3', 'Noto Sans SC', sans-serif;
+}
+
+/* Contact Methods Grid */
+.contact-methods-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+/* Individual Contact Method */
+.contact-method {
+  background: var(--surface);
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+  border: 2px solid rgba(196, 30, 58, 0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.contact-method:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  border-color: rgba(196, 30, 58, 0.3);
+}
+
+.contact-method:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(196, 30, 58, 0.2);
+}
+
+.contact-method.clicked {
+  transform: scale(0.98);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* WhatsApp method special styling */
+.contact-method[data-method='whatsapp'] a {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+}
+
+/* Method Icon */
+.method-icon {
+  flex-shrink: 0;
+  width: 48px;
+  height: 48px;
+  background: var(--gradient-primary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.contact-method:hover .method-icon {
+  transform: scale(1.1) rotate(5deg);
+  background: var(--gradient-secondary);
+}
+
+.method-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Method Content */
+.method-content {
+  flex: 1;
+}
+
+.method-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.method-text {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.5;
+  margin-bottom: 0.25rem;
+}
+
+.method-hours {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-style: italic;
+}
+
+/* Special styling for different methods */
+.contact-method[data-method='email'] .method-icon {
+  background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+}
+
+.contact-method[data-method='phone'] .method-icon {
+  background: linear-gradient(135deg, #10b981, #059669);
+}
+
+.contact-method[data-method='whatsapp'] .method-icon {
+  background: linear-gradient(135deg, #25d366, #128c7e);
+}
+
+.contact-method[data-method='office'] .method-icon {
+  background: linear-gradient(135deg, #f59e0b, #d97706);
+}
+
+/* Submission Messages */
+.submission-confirmation,
+.submission-error,
+.copy-confirmation {
+  padding: 1rem 1.5rem;
+  border-radius: 0.5rem;
+  margin-top: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+  animation: slideInUp 0.3s ease;
+}
+
+.submission-confirmation {
+  background: rgba(45, 134, 89, 0.1);
+  color: var(--secondary);
+  border: 1px solid rgba(45, 134, 89, 0.2);
+}
+
+.submission-error {
+  background: rgba(239, 68, 68, 0.1);
+  color: #ef4444;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+}
+
+.copy-confirmation {
+  background: rgba(59, 130, 246, 0.1);
+  color: #3b82f6;
+  border: 1px solid rgba(59, 130, 246, 0.2);
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  min-width: 200px;
+}
+
+/* Hong Kong Cultural Decorative Elements */
+.contact-methods::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+  opacity: 0.8;
+}
+
+.contact-method::after {
+  content: '';
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 20px;
+  height: 20px;
+  background: var(--gradient-secondary);
+  border-radius: 50%;
+  opacity: 0.2;
+  transition: all 0.3s ease;
+}
+
+.contact-method:hover::after {
+  transform: scale(1.5);
+  opacity: 0.4;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-methods-container {
+    padding: 0 1rem;
+  }
+
+  .contact-methods-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .contact-method {
+    padding: 1.5rem;
+  }
+
+  .contact-methods-title {
+    font-size: 1.75rem;
+  }
+
+  .copy-confirmation {
+    top: 1rem;
+    right: 1rem;
+    left: 1rem;
+    min-width: auto;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-methods {
+    padding: 2rem 0;
+  }
+
+  .contact-method {
+    padding: 1rem;
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem;
+  }
+
+  .contact-method[data-method='whatsapp'] a {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .method-icon {
+    align-self: center;
+  }
+
+  .contact-methods-title {
+    font-size: 1.5rem;
+  }
+}
+
+/* Animations */
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+.contact-method:active {
+  animation: pulse 0.2s ease;
+}
+
+/* Dark Mode Adjustments */
+[data-theme='dark'] .contact-method {
+  background: var(--surface);
+  border-color: rgba(230, 194, 0, 0.2);
+}
+
+[data-theme='dark'] .contact-method:hover {
+  border-color: rgba(230, 194, 0, 0.4);
+}
+
+[data-theme='dark'] .submission-confirmation {
+  background: rgba(82, 183, 136, 0.15);
+  border-color: rgba(82, 183, 136, 0.3);
+}
+
+[data-theme='dark'] .submission-error {
+  background: rgba(248, 113, 113, 0.15);
+  border-color: rgba(248, 113, 113, 0.3);
+}
+
+[data-theme='dark'] .copy-confirmation {
+  background: rgba(96, 165, 250, 0.15);
+  border-color: rgba(96, 165, 250, 0.3);
+}
+
+/* Accessibility Enhancements */
+@media (prefers-reduced-motion: reduce) {
+  .contact-method,
+  .method-icon,
+  .submission-confirmation,
+  .submission-error,
+  .copy-confirmation {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* Focus visible for keyboard navigation */
+.contact-method:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .contact-method {
+    border-width: 3px;
+  }
+
+  .method-icon {
+    border: 2px solid var(--text-primary);
+  }
+}
+
+/* Print styles */
+@media print {
+  .contact-method {
+    break-inside: avoid;
+    box-shadow: none;
+    border: 1px solid #000;
+  }
+
+  .method-icon {
+    background: #000 !important;
+    color: #fff !important;
+  }
+}

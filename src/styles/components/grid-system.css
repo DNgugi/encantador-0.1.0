@@ -1,0 +1,412 @@
+/* Encantador Custom Grid System */
+
+/* Base Grid Container */
+.encantador-grid {
+  display: grid;
+  gap: clamp(1rem, 3vw, 2rem);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Custom Column Layouts */
+.encantador-grid.seven-column {
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.encantador-grid.eleven-column {
+  grid-template-columns: repeat(11, 1fr);
+}
+
+/* Asymmetrical Grid Layout */
+.encantador-grid.asymmetrical {
+  grid-template-columns: 2fr 3fr 1fr;
+}
+
+/* Grid Item Spanning */
+.grid-item.span-1 {
+  grid-column: span 1;
+}
+
+.grid-item.span-2 {
+  grid-column: span 2;
+}
+
+.grid-item.span-3 {
+  grid-column: span 3;
+}
+
+.grid-item.span-4 {
+  grid-column: span 4;
+}
+
+.grid-item.span-5 {
+  grid-column: span 5;
+}
+
+.grid-item.span-6 {
+  grid-column: span 6;
+}
+
+.grid-item.span-7 {
+  grid-column: span 7;
+}
+
+/* Responsive Grid Layouts */
+.encantador-grid.responsive-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+/* Responsive Gaps */
+.encantador-grid.responsive-gaps {
+  gap: clamp(0.5rem, 2vw, 1.5rem);
+}
+
+/* Diagonal Layout */
+.encantador-grid.diagonal-layout {
+  transform: skew(-2deg);
+  overflow: hidden;
+}
+
+.diagonal-layout .diagonal-item {
+  transform: skew(2deg);
+}
+
+/* Overlapping Sections */
+.encantador-grid.overlapping-sections {
+  position: relative;
+}
+
+.overlap-base {
+  z-index: 1;
+}
+
+.overlap-top {
+  z-index: 2;
+  margin-top: -2rem;
+  margin-left: 2rem;
+}
+
+/* Non-Standard Content Widths */
+.width-narrow {
+  max-width: 300px;
+  justify-self: center;
+}
+
+.width-wide {
+  grid-column: 1 / -1;
+  max-width: 800px;
+  justify-self: center;
+}
+
+.width-full {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+/* Mobile-First Responsive Classes */
+.mobile-full {
+  grid-column: 1 / -1;
+}
+
+.mobile-first {
+  grid-template-columns: 1fr;
+}
+
+/* Orientation Adaptive */
+.orientation-adaptive {
+  grid-auto-flow: row;
+}
+
+@media (orientation: landscape) and (max-width: 768px) {
+  .orientation-adaptive {
+    grid-auto-flow: column;
+    grid-template-rows: repeat(2, 1fr);
+  }
+}
+
+/* Accessible Grid */
+.accessible-grid {
+  outline: none;
+}
+
+.accessible-grid .grid-item:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Performance Optimized */
+.performance-optimized {
+  contain: layout style;
+  will-change: auto;
+}
+
+.performance-optimized .grid-item {
+  contain: layout;
+}
+
+/* Layout Stable */
+.layout-stable {
+  transition: grid-template-columns 0.3s ease;
+}
+
+/* Responsive Breakpoints */
+
+/* Mobile (up to 768px) */
+@media (max-width: 768px) {
+  .encantador-grid {
+    padding: 0 0.5rem;
+    gap: 1rem;
+  }
+
+  .encantador-grid.seven-column,
+  .encantador-grid.eleven-column {
+    grid-template-columns: 1fr;
+  }
+
+  .encantador-grid.asymmetrical {
+    grid-template-columns: 1fr;
+  }
+
+  .mobile-first {
+    grid-template-columns: 1fr;
+  }
+
+  .diagonal-layout {
+    transform: none;
+  }
+
+  .diagonal-layout .diagonal-item {
+    transform: none;
+  }
+
+  .overlap-top {
+    margin-top: 0;
+    margin-left: 0;
+  }
+
+  /* Mobile-specific grid item classes */
+  .mobile-full {
+    grid-column: 1 / -1;
+  }
+
+  .mobile-half {
+    grid-column: span 1;
+  }
+}
+
+/* Tablet (769px to 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .encantador-grid {
+    padding: 0 1rem;
+    gap: 1.5rem;
+  }
+
+  .encantador-grid.seven-column {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .encantador-grid.eleven-column {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .encantador-grid.asymmetrical {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  .mobile-first {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Tablet-specific grid item classes */
+  .tablet-half {
+    grid-column: span 1;
+  }
+
+  .tablet-full {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Desktop (1025px and up) */
+@media (min-width: 1025px) {
+  .encantador-grid {
+    padding: 0 2rem;
+    gap: 2rem;
+  }
+
+  .encantador-grid.seven-column {
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  .encantador-grid.eleven-column {
+    grid-template-columns: repeat(11, 1fr);
+  }
+
+  .encantador-grid.asymmetrical {
+    grid-template-columns: 2fr 3fr 1fr;
+  }
+
+  .mobile-first {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .desktop-full {
+    grid-template-columns: repeat(7, 1fr);
+  }
+
+  /* Desktop-specific grid item classes */
+  .desktop-third {
+    grid-column: span 1;
+  }
+
+  .desktop-half {
+    grid-column: span 2;
+  }
+
+  .desktop-full {
+    grid-column: 1 / -1;
+  }
+}
+
+/* Large Desktop (1440px and up) */
+@media (min-width: 1440px) {
+  .encantador-grid {
+    max-width: 1400px;
+    gap: 2.5rem;
+  }
+}
+
+/* Ultra-wide (1920px and up) */
+@media (min-width: 1920px) {
+  .encantador-grid {
+    max-width: 1600px;
+    gap: 3rem;
+  }
+}
+
+/* Grid Item Base Styles */
+.grid-item {
+  min-width: 0; /* Prevent grid blowout */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Hong Kong Cultural Grid Patterns */
+
+/* Peak Tram Angle Grid */
+.peak-tram-grid {
+  transform: rotate(-15deg);
+  transform-origin: center;
+}
+
+.peak-tram-grid .grid-item {
+  transform: rotate(15deg);
+}
+
+/* Victoria Harbour Flow Grid */
+.harbour-flow-grid {
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-auto-rows: minmax(150px, auto);
+}
+
+.harbour-flow-grid .grid-item:nth-child(even) {
+  transform: translateY(1rem);
+}
+
+/* IFC Tower Skyline Grid */
+.skyline-grid {
+  grid-template-rows: 1fr 2fr 3fr 2fr 1fr;
+  grid-template-columns: repeat(5, 1fr);
+  height: 300px;
+}
+
+.skyline-grid .grid-item {
+  background: linear-gradient(to top, var(--secondary), var(--primary));
+  border-radius: 0.25rem 0.25rem 0 0;
+}
+
+/* Jade Prosperity Pattern Grid */
+.jade-pattern-grid {
+  background-image:
+    linear-gradient(45deg, var(--secondary) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--secondary) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--secondary) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--secondary) 75%);
+  background-size: 20px 20px;
+  background-position:
+    0 0,
+    0 10px,
+    10px -10px,
+    -10px 0px;
+  opacity: 0.1;
+}
+
+/* Animation Support */
+.encantador-grid.animated {
+  transition: all 0.3s ease;
+}
+
+.encantador-grid.animated .grid-item {
+  transition:
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+/* Hover Effects */
+.encantador-grid.hover-lift .grid-item:hover {
+  transform: translateY(-0.5rem);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Focus Management */
+.encantador-grid:focus-within .grid-item:not(:focus) {
+  opacity: 0.7;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .encantador-grid,
+  .encantador-grid .grid-item {
+    transition: none;
+    animation: none;
+  }
+
+  .diagonal-layout,
+  .peak-tram-grid {
+    transform: none;
+  }
+
+  .diagonal-layout .diagonal-item,
+  .peak-tram-grid .grid-item {
+    transform: none;
+  }
+}
+
+/* Dark Theme Adjustments */
+[data-theme='dark'] .encantador-grid {
+  /* Dark theme specific adjustments if needed */
+}
+
+[data-theme='dark'] .skyline-grid .grid-item {
+  background: linear-gradient(to top, var(--secondary), var(--accent));
+}
+
+/* Print Styles */
+@media print {
+  .encantador-grid {
+    display: block;
+    gap: 1rem;
+  }
+
+  .grid-item {
+    break-inside: avoid;
+    margin-bottom: 1rem;
+  }
+
+  .diagonal-layout,
+  .peak-tram-grid {
+    transform: none;
+  }
+}

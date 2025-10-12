@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hong Kong Cultural Elements Demo</title>
+    <link rel="stylesheet" href="src/styles/main.css" />
+    <style>
+      body {
+        font-family: 'Source Sans 3', sans-serif;
+        margin: 0;
+        padding: 2rem;
+        background: var(--background);
+        color: var(--text-primary);
+      }
+
+      .demo-section {
+        margin: 3rem 0;
+        padding: 2rem;
+        background: var(--surface);
+        border-radius: 1rem;
+        box-shadow: var(--shadow-md);
+      }
+
+      .demo-title {
+        font-size: 1.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+        color: var(--primary);
+      }
+
+      .demo-description {
+        margin-bottom: 2rem;
+        color: var(--text-secondary);
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hong Kong Cultural Design Elements</h1>
+    <p>
+      This page demonstrates the cultural design elements for the Studio
+      Encantador website.
+    </p>
+
+    <div class="demo-section">
+      <div class="demo-title">Victoria Harbour Wave Animations</div>
+      <div class="demo-description">
+        Flowing horizontal wave animations representing Victoria Harbour's
+        waters
+      </div>
+      <div class="harbour-wave-container">
+        <div
+          class="harbour-wave harbour-wave-animation"
+          data-testid="wave-1"
+        ></div>
+        <div
+          class="harbour-wave harbour-wave-animation"
+          data-testid="wave-2"
+        ></div>
+        <div
+          class="harbour-wave harbour-wave-animation"
+          data-testid="wave-3"
+        ></div>
+      </div>
+    </div>
+
+    <div class="demo-section">
+      <div class="demo-title">IFC Tower Skyline</div>
+      <div class="demo-description">
+        Authentic Hong Kong skyline featuring the iconic IFC Tower
+      </div>
+      <div
+        class="ifc-tower-skyline cultural-element"
+        data-testid="ifc-tower"
+      ></div>
+    </div>
+
+    <div class="demo-section">
+      <div class="demo-title">Hong Kong Hills Pattern</div>
+      <div class="demo-description">
+        Mountain silhouettes representing Hong Kong's iconic peaks
+      </div>
+      <div
+        class="hong-kong-hills cultural-element"
+        data-testid="hk-hills"
+      ></div>
+    </div>
+
+    <div class="demo-section">
+      <div class="demo-title">Jade Green Prosperity Crosshatch</div>
+      <div class="demo-description">
+        Traditional crosshatch pattern in jade green representing prosperity
+      </div>
+      <div
+        class="jade-crosshatch cultural-element"
+        data-testid="jade-pattern"
+      ></div>
+    </div>
+
+    <div class="demo-section">
+      <div class="demo-title">Combined Cultural Patterns</div>
+      <div class="demo-description">
+        All cultural elements together as they would appear on the website
+      </div>
+      <div class="cultural-patterns">
+        <div class="ifc-tower-skyline cultural-element"></div>
+        <div class="hong-kong-hills cultural-element"></div>
+        <div class="jade-crosshatch cultural-element"></div>
+      </div>
+    </div>
+
+    <script type="module" src="src/js/cultural-elements-component.js"></script>
+  </body>
+</html>

@@ -1,0 +1,441 @@
+/* Studio Encantador Theme Variables System */
+
+:root {
+  /* Hong Kong Cultural Colors (Toned Down for Professional Appeal) */
+  --primary: #c41e3a; /* Deeper Crimson Red - Prosperity */
+  --secondary: #2d8659; /* Muted Jade Green - Growth */
+  --accent: #e6c200; /* Warmer Gold - Wealth */
+  --highlight: #a8336b; /* Softer Pink - Modern Touch */
+  --background: #f8f8ff; /* Soft Ivory */
+  --surface: #ffffff;
+  --text-primary: #1a1a1a;
+  --text-secondary: #666666;
+
+  /* Custom Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--primary), var(--highlight));
+  --gradient-secondary: linear-gradient(45deg, var(--secondary), var(--accent));
+  --gradient-harbour: linear-gradient(
+    180deg,
+    #7fb3d3 0%,
+    var(--secondary) 100%
+  );
+
+  /* Animation Duration Variables */
+  --animation-duration-fast: 0.2s;
+  --animation-duration-normal: 0.3s;
+  --animation-duration-slow: 0.5s;
+
+  /* Animation Easing Variables */
+  --animation-easing-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --animation-easing-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Shadow Variables for Depth */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl:
+    0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+
+  /* Border Radius Variables */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+
+  /* Spacing Variables */
+  --spacing-xs: 0.25rem;
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 1.5rem;
+  --spacing-xl: 2rem;
+  --spacing-2xl: 3rem;
+
+  /* Typography Variables */
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+
+  /* Line Height Variables */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+
+  /* Z-Index Variables */
+  --z-dropdown: 1000;
+  --z-sticky: 1020;
+  --z-fixed: 1030;
+  --z-modal-backdrop: 1040;
+  --z-modal: 1050;
+  --z-popover: 1060;
+  --z-tooltip: 1070;
+
+  /* Breakpoint Variables */
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+}
+
+/* Dark Theme - Hong Kong Night Skyline */
+[data-theme='dark'] {
+  --primary: #e63946; /* Adjusted Crimson */
+  --secondary: #52b788; /* Balanced Jade */
+  --accent: #d4a574; /* Muted Gold */
+  --highlight: #d63384; /* Professional Pink */
+  --background: #0f172a; /* Deep Navy */
+  --surface: #1e293b;
+  --text-primary: #f1f5f9;
+  --text-secondary: #cbd5e1;
+
+  /* Night-specific Gradients */
+  --gradient-primary: linear-gradient(135deg, var(--primary), var(--accent));
+  --gradient-secondary: linear-gradient(
+    45deg,
+    var(--secondary),
+    var(--highlight)
+  );
+  --gradient-harbour: linear-gradient(
+    180deg,
+    #1e293b 0%,
+    var(--background) 100%
+  );
+
+  /* Dark Theme Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md:
+    0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg:
+    0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --shadow-xl:
+    0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+/* Hong Kong Cultural Animations */
+@keyframes harbour-wave {
+  0% {
+    transform: translateX(-100%) scaleY(1);
+  }
+  50% {
+    transform: translateX(0%) scaleY(1.2);
+  }
+  100% {
+    transform: translateX(100%) scaleY(1);
+  }
+}
+
+@keyframes peak-tram-slide {
+  0% {
+    transform: translateX(-100%) rotate(-15deg);
+  }
+  100% {
+    transform: translateX(0%) rotate(0deg);
+  }
+}
+
+@keyframes jade-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes dragon-scale-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes ifc-tower-glow {
+  0% {
+    box-shadow: 0 0 5px var(--primary);
+  }
+  50% {
+    box-shadow:
+      0 0 20px var(--primary),
+      0 0 30px var(--accent);
+  }
+  100% {
+    box-shadow: 0 0 5px var(--primary);
+  }
+}
+
+/* Theme Transition Classes */
+.theme-transition-element {
+  will-change: background-color, color, border-color;
+  transition:
+    background-color var(--animation-duration-normal)
+      var(--animation-easing-smooth),
+    color var(--animation-duration-normal) var(--animation-easing-smooth),
+    border-color var(--animation-duration-normal) var(--animation-easing-smooth),
+    box-shadow var(--animation-duration-normal) var(--animation-easing-smooth);
+}
+
+/* Base Theme Transition for All Elements */
+* {
+  transition:
+    background-color var(--animation-duration-normal)
+      var(--animation-easing-smooth),
+    color var(--animation-duration-normal) var(--animation-easing-smooth),
+    border-color var(--animation-duration-normal) var(--animation-easing-smooth);
+}
+
+/* Performance Optimizations */
+.performance-optimized {
+  contain: layout style;
+  will-change: auto;
+}
+
+.performance-optimized * {
+  contain: layout;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .harbour-wave,
+  .peak-tram-slide,
+  .jade-shimmer {
+    animation: none !important;
+  }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+  :root {
+    --primary: #000000;
+    --secondary: #000000;
+    --accent: #000000;
+    --highlight: #000000;
+    --background: #ffffff;
+    --surface: #ffffff;
+    --text-primary: #000000;
+    --text-secondary: #000000;
+  }
+
+  [data-theme='dark'] {
+    --primary: #ffffff;
+    --secondary: #ffffff;
+    --accent: #ffffff;
+    --highlight: #ffffff;
+    --background: #000000;
+    --surface: #000000;
+    --text-primary: #ffffff;
+    --text-secondary: #ffffff;
+  }
+}
+
+/* Print Styles */
+@media print {
+  :root {
+    --primary: #000000;
+    --secondary: #000000;
+    --accent: #000000;
+    --highlight: #000000;
+    --background: #ffffff;
+    --surface: #ffffff;
+    --text-primary: #000000;
+    --text-secondary: #666666;
+  }
+
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}
+
+/* Cultural Pattern Utilities */
+.harbour-wave-animation {
+  animation: harbour-wave 2s ease-in-out infinite;
+}
+
+.peak-tram-animation {
+  animation: peak-tram-slide 1s var(--animation-easing-bounce);
+}
+
+.jade-shimmer-animation {
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--secondary),
+    transparent
+  );
+  background-size: 200% 100%;
+  animation: jade-shimmer 2s ease-in-out infinite;
+}
+
+.ifc-tower-glow {
+  animation: ifc-tower-glow 3s ease-in-out infinite;
+}
+
+/* Theme-aware Component Base Classes */
+.surface {
+  background-color: var(--surface);
+  color: var(--text-primary);
+}
+
+.background {
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+.primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.secondary {
+  background-color: var(--secondary);
+  color: white;
+}
+
+.accent {
+  background-color: var(--accent);
+  color: var(--text-primary);
+}
+
+.highlight {
+  background-color: var(--highlight);
+  color: white;
+}
+
+/* Gradient Utilities */
+.gradient-primary {
+  background: var(--gradient-primary);
+  color: white;
+}
+
+.gradient-secondary {
+  background: var(--gradient-secondary);
+  color: white;
+}
+
+.gradient-harbour {
+  background: var(--gradient-harbour);
+  color: white;
+}
+
+/* Shadow Utilities */
+.shadow-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.shadow-md {
+  box-shadow: var(--shadow-md);
+}
+
+.shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+.shadow-xl {
+  box-shadow: var(--shadow-xl);
+}
+
+/* Border Radius Utilities */
+.rounded-sm {
+  border-radius: var(--radius-sm);
+}
+
+.rounded-md {
+  border-radius: var(--radius-md);
+}
+
+.rounded-lg {
+  border-radius: var(--radius-lg);
+}
+
+.rounded-xl {
+  border-radius: var(--radius-xl);
+}
+
+/* Interactive States */
+.interactive {
+  cursor: pointer;
+  transition: all var(--animation-duration-normal)
+    var(--animation-easing-smooth);
+}
+
+.interactive:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-lg);
+}
+
+.interactive:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-md);
+}
+
+.interactive:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Accessibility Enhancements */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.focus-visible:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Skip Links */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 6px;
+  background: var(--primary);
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  z-index: var(--z-tooltip);
+  transition: top var(--animation-duration-fast) var(--animation-easing-smooth);
+}
+
+.skip-link:focus {
+  top: 6px;
+}
+/* Theme Transitioning State */
+.theme-transitioning {
+  pointer-events: none;
+}
+
+.theme-transitioning * {
+  transition:
+    background-color var(--animation-duration-normal)
+      var(--animation-easing-smooth),
+    color var(--animation-duration-normal) var(--animation-easing-smooth),
+    border-color var(--animation-duration-normal) var(--animation-easing-smooth),
+    box-shadow var(--animation-duration-normal) var(--animation-easing-smooth);
+}
