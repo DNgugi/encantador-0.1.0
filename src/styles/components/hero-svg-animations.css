@@ -1,0 +1,260 @@
+/* Hero SVG Illustration Animations */
+
+/* Fade in up animation for SVG elements */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+/* Interactive hover effects */
+.interactive-element {
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+  cursor: pointer;
+}
+
+.interactive-element:hover,
+.interactive-element.hover-active {
+  transform: scale(1.05);
+  filter: brightness(1.1);
+}
+
+/* Laptop screen glow animation */
+.laptop-element rect[fill*='var(--accent)'] {
+  animation: screenGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes screenGlow {
+  from {
+    opacity: 0.6;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Chart bars growth animation */
+.chart-elements rect[fill*='var(--primary)'],
+.chart-elements rect[fill*='var(--secondary)'],
+.chart-elements rect[fill*='var(--accent)'] {
+  transform-origin: bottom;
+  animation: barGrowth 1.2s ease-out forwards;
+}
+
+.chart-elements rect[fill*='var(--secondary)'] {
+  animation-delay: 0.2s;
+}
+
+.chart-elements rect[fill*='var(--accent)'] {
+  animation-delay: 0.4s;
+}
+
+@keyframes barGrowth {
+  from {
+    transform: scaleY(0);
+  }
+  to {
+    transform: scaleY(1);
+  }
+}
+
+/* Business person subtle animation */
+.business-person {
+  animation: subtleBob 3s ease-in-out infinite;
+}
+
+@keyframes subtleBob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Hong Kong skyline fade in */
+.hk-skyline {
+  animation: skylineFadeIn 1.5s ease-out 0.8s forwards;
+  opacity: 0;
+}
+
+@keyframes skylineFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Cultural pattern subtle animation */
+.cultural-pattern {
+  animation: patternShimmer 4s ease-in-out infinite;
+}
+
+@keyframes patternShimmer {
+  0%,
+  100% {
+    opacity: 0.8;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Reduced motion styles */
+.reduced-motion .fade-in-up,
+.reduced-motion .interactive-element,
+.reduced-motion .business-person,
+.reduced-motion .hk-skyline,
+.reduced-motion .cultural-pattern,
+.reduced-motion .laptop-element rect,
+.reduced-motion .chart-elements rect {
+  animation: none !important;
+  transition: none !important;
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Theme-aware styles */
+.theme-aware {
+  transition: all 0.3s ease;
+}
+
+[data-theme='dark'] .theme-aware .hk-skyline path {
+  fill: var(--secondary);
+  opacity: 0.4;
+}
+
+[data-theme='dark'] .theme-aware .cultural-pattern pattern line {
+  stroke: var(--secondary);
+  opacity: 0.3;
+}
+
+/* Performance optimizations */
+.hero-custom-svg {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+.hero-custom-svg * {
+  vector-effect: non-scaling-stroke;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .interactive-element:hover,
+  .interactive-element.hover-active {
+    transform: scale(1.02); /* Smaller scale on mobile */
+  }
+
+  .business-person,
+  .laptop-element,
+  .chart-elements {
+    animation-duration: 2s; /* Faster animations on mobile */
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-custom-svg,
+  .hero-custom-svg * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+/* Floating elements animation */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.floating-element {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Lightbulb glow pulse animation */
+@keyframes glowPulse {
+  0%,
+  100% {
+    opacity: 0.2;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.4;
+    transform: scale(1.1);
+  }
+}
+
+.glow-pulse {
+  animation: glowPulse 2s ease-in-out infinite;
+}
+
+/* Business person subtle animation */
+.business-person {
+  animation: fadeInUp 1s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+/* Documents floating animation */
+.floating-documents {
+  animation: fadeInUp 0.8s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+.floating-documents rect {
+  animation: float 4s ease-in-out infinite;
+}
+
+/* Lightbulb idea entrance */
+.lightbulb-idea {
+  animation: fadeInUp 0.8s ease-out 0.9s forwards;
+  opacity: 0;
+}
+
+/* Stagger floating animations */
+.floating-element:nth-child(1) {
+  animation-delay: 0s;
+}
+.floating-element:nth-child(2) {
+  animation-delay: 0.5s;
+}
+.floating-element:nth-child(3) {
+  animation-delay: 1s;
+}
+.floating-element:nth-child(4) {
+  animation-delay: 1.5s;
+}
+.floating-element:nth-child(5) {
+  animation-delay: 2s;
+}
+
+/* Modern hover effects for new elements */
+.lightbulb-idea:hover .glow-pulse {
+  animation-duration: 1s;
+}
+
+.floating-documents:hover rect {
+  animation-duration: 2s;
+}

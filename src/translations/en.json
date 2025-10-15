@@ -1,0 +1,193 @@
+{
+  "site": {
+    "title": "Studio Encantador - Hong Kong Business Consulting",
+    "description": "Boutique consulting agency offering Business Consulting, Web Development, and Team Building services in Hong Kong"
+  },
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "about": "About",
+    "portfolio": "Portfolio",
+    "contact": "Contact"
+  },
+  "hero": {
+    "headline": "Transform Your Business with Expert Consulting",
+    "subheadline": "Hong Kong's boutique consulting agency specializing in Business Strategy, Web Development, and Team Building",
+    "cta": {
+      "primary": "Get Started",
+      "secondary": "Learn More"
+    }
+  },
+  "welcome": "Welcome to Studio Encantador",
+  "description": "Hong Kong Business Consulting Agency",
+  "services": {
+    "title": "Our Services",
+    "subtitle": "Comprehensive business solutions for Hong Kong companies",
+    "consulting": {
+      "title": "Business Consulting",
+      "description": "Strategic guidance to transform your business operations and drive growth in the Hong Kong market. Our AI-enhanced methodologies provide deeper insights while maintaining focus on human expertise and practical solutions.",
+      "features": [
+        "Market Analysis & Strategy",
+        "Process Optimization with AI insights",
+        "Digital Transformation Planning",
+        "Performance Analytics & Reporting"
+      ]
+    },
+    "web": {
+      "title": "Web Development",
+      "description": "Modern, responsive websites and applications tailored for Hong Kong businesses. We leverage AI tools to accelerate development while ensuring every solution is crafted with human creativity and local market understanding.",
+      "features": [
+        "Responsive Design for all devices",
+        "E-commerce Solutions with AI recommendations",
+        "Multi-language Support (EN/ZH-HK/ZH-CN)",
+        "Performance Optimization & SEO"
+      ]
+    },
+    "team": {
+      "title": "Team Building",
+      "description": "Strengthen your team dynamics and improve collaboration with our proven methodologies. AI-powered personality assessments complement traditional team building to create more effective and harmonious work environments.",
+      "features": [
+        "Leadership Development Programs",
+        "Communication Training with AI insights",
+        "Conflict Resolution Strategies",
+        "Cultural Integration for diverse teams"
+      ]
+    }
+  },
+  "contact": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch to discuss your business needs",
+    "form": {
+      "name": {
+        "label": "Full Name",
+        "placeholder": "Enter your full name",
+        "required": "Name is required",
+        "minLength": "Name must be at least 2 characters"
+      },
+      "email": {
+        "label": "Email Address",
+        "placeholder": "Enter your email address",
+        "required": "Email is required",
+        "invalid": "Please enter a valid email address"
+      },
+      "phone": {
+        "label": "Phone Number (Optional)",
+        "placeholder": "Enter your Hong Kong phone number",
+        "invalid": "Please enter a valid Hong Kong phone number"
+      },
+      "message": {
+        "label": "Message",
+        "placeholder": "Tell us about your business needs and how we can help",
+        "required": "Message is required",
+        "minLength": "Message must be at least 10 characters"
+      },
+      "submit": "Send Message",
+      "submitting": "Sending...",
+      "success": "Thank you! Your message has been sent successfully. We'll get back to you within 24 hours.",
+      "error": "Sorry, there was an error sending your message. Please try again or contact us directly."
+    },
+    "methods": {
+      "title": "Other Ways to Reach Us",
+      "email": "Email us at {email}",
+      "phone": "Call us at {phone}",
+      "whatsapp": "WhatsApp us at {phone}",
+      "office": "Visit our office",
+      "address": "Central, Hong Kong",
+      "hours": "Monday - Friday: 9:00 AM - 6:00 PM"
+    }
+  },
+  "team": {
+    "count": "We have {count} team members"
+  },
+  "search": {
+    "placeholder": "Search our services..."
+  },
+  "button": {
+    "help": "Get help and support"
+  },
+  "about": {
+    "title": "About Studio Encantador",
+    "subtitle": "Hong Kong Business Consulting Excellence",
+    "story": "Founded in January 2025, Studio Encantador is a boutique consulting agency that combines human expertise with AI-enhanced methodologies to deliver exceptional results for Hong Kong businesses. We believe in the power of strategic thinking, innovative technology, and cultural understanding to transform organizations and drive sustainable growth.",
+    "founders": {
+      "title": "Meet Our Founders",
+      "profiles": [
+        {
+          "name": "Alex Chen",
+          "title": "Managing Director & Business Strategy Lead",
+          "background": "Former McKinsey consultant with 8+ years experience in Hong Kong market analysis and digital transformation. Specializes in strategic planning, process optimization, and AI-enhanced business intelligence.",
+          "experience": "Led 50+ transformation projects across Asia-Pacific region",
+          "achievements": "Recognized expert in Hong Kong business ecosystem",
+          "certifications": [
+            "MBA from HKUST",
+            "Certified Management Consultant",
+            "AI Strategy Certification"
+          ]
+        },
+        {
+          "name": "Sarah Wong",
+          "title": "Technical Director & Innovation Lead",
+          "background": "Full-stack developer and team building specialist with expertise in modern web technologies and organizational psychology. Passionate about creating digital solutions that enhance human collaboration.",
+          "experience": "Built 100+ web applications for Hong Kong SMEs",
+          "achievements": "Pioneer in AI-enhanced team building methodologies",
+          "certifications": [
+            "Computer Science Degree",
+            "Certified Scrum Master",
+            "Team Dynamics Certification"
+          ]
+        }
+      ]
+    },
+    "credibility": {
+      "title": "Why Choose Studio Encantador",
+      "elements": [
+        "Deep Hong Kong market knowledge and cultural expertise",
+        "AI-enhanced consulting methodologies for data-driven insights",
+        "Proven track record in business transformation and growth",
+        "Bilingual team with international and local experience"
+      ]
+    }
+  },
+  "portfolio": {
+    "title": "Our Portfolio",
+    "subtitle": "Real projects delivering measurable results for Hong Kong businesses",
+    "filterAll": "All Projects",
+    "filterConsulting": "Business Consulting",
+    "filterWeb": "Web Development",
+    "filterTeam": "Team Development",
+    "viewDetails": "View Details",
+    "closeModal": "Close",
+    "projectTimeline": "Project Timeline",
+    "keyLearnings": "Key Learnings",
+    "technologies": "Technologies Used",
+    "methodology": "Methodology"
+  },
+  "footer": {
+    "description": "Hong Kong's boutique consulting agency specializing in Business Strategy, Web Development, and Team Building. Transforming businesses with expert guidance and innovative solutions.",
+    "established": "Est. 2025",
+    "location": "Hong Kong",
+    "services": {
+      "title": "Our Services",
+      "consulting": "Business Consulting",
+      "web": "Web Development",
+      "team": "Team Building",
+      "strategy": "Digital Strategy"
+    },
+    "company": {
+      "title": "Company",
+      "about": "About Us",
+      "portfolio": "Portfolio",
+      "contact": "Contact",
+      "careers": "Careers"
+    },
+    "contact": {
+      "title": "Get in Touch",
+      "address": "Central, Hong Kong"
+    },
+    "copyright": "All rights reserved.",
+    "legal": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    }
+  }
+}

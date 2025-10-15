@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Form Demo - Studio Encantador</title>
+    <link rel="stylesheet" href="src/styles/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header">
+      <nav class="nav">
+        <div class="language-switcher-container"></div>
+        <div class="theme-toggle-container">
+          <button
+            id="theme-toggle"
+            class="theme-toggle"
+            aria-label="Toggle theme"
+          >
+            <span class="theme-icon">🌙</span>
+          </button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="demo-content">
+        <h1>Contact Form Component Demo</h1>
+        <p>
+          Testing the contact form with validation and multi-language support
+        </p>
+
+        <div class="demo-info">
+          <p>Current Language: <span id="current-language">en</span></p>
+          <p>Theme: <span id="current-theme">light</span></p>
+        </div>
+      </div>
+
+      <div id="contact-form-container"></div>
+    </main>
+
+    <script type="module">
+      import { ContactSection } from './src/js/contact-section-component.js'
+      import { LanguageSystem } from './src/js/language-system.js'
+      import { ThemeSystem } from './src/js/theme-system.js'
+
+      // Initialize systems
+      const languageSystem = new LanguageSystem()
+      const themeSystem = new ThemeSystem()
+
+      // Initialize contact section
+      const container = document.getElementById('contact-form-container')
+      const contactSection = new ContactSection(container)
+
+      // Update demo info
+      function updateDemoInfo() {
+        document.getElementById('current-language').textContent =
+          languageSystem.getCurrentLanguage()
+        document.getElementById('current-theme').textContent =
+          themeSystem.getCurrentTheme()
+      }
+
+      // Listen for language changes
+      document.addEventListener('languageChanged', e => {
+        contactSection.setLanguage(e.detail.language)
+        updateDemoInfo()
+      })
+
+      // Listen for theme changes
+      document.addEventListener('themeChanged', updateDemoInfo)
+
+      // Initial update
+      updateDemoInfo()
+    </script>
+  </body>
+</html>

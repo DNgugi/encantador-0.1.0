@@ -1,0 +1,281 @@
+/* Hero Section Styles */
+
+.hero-split-layout {
+  background: var(--gradient-harbour);
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  min-height: 80vh;
+  padding: 6rem 0 4rem 0; /* Full width padding, no horizontal constraints */
+  will-change: transform;
+}
+
+.hero-container {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  gap: 4rem;
+  min-height: inherit;
+}
+
+.hero-text-content {
+  flex: 1;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Center content vertically to match SVG height */
+}
+
+.hero-headline {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: var(
+    --primary
+  ); /* Fallback for browsers that don't support background-clip */
+}
+
+.hero-subheadline {
+  font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+  line-height: 1.6;
+  color: var(--text-primary);
+  margin-bottom: 2.5rem;
+  max-width: 500px;
+}
+
+.hero-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hero-cta-primary,
+.hero-cta-secondary {
+  padding: 1rem 2rem;
+  border-radius: 0.75rem;
+  font-size: 1.125rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 140px;
+}
+
+.hero-cta-primary {
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: 0 4px 15px rgba(220, 20, 60, 0.3);
+}
+
+.hero-cta-primary:hover,
+.hero-cta-primary.hover-active {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(220, 20, 60, 0.4);
+}
+
+.hero-cta-secondary {
+  background: transparent;
+  color: var(--primary);
+  border: 2px solid var(--primary);
+}
+
+.hero-cta-secondary:hover,
+.hero-cta-secondary.hover-active {
+  background: var(--primary);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(220, 20, 60, 0.2);
+}
+
+.hero-illustration {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 500px;
+  min-height: 100%; /* Match the height of the text content */
+}
+
+.hero-svg,
+.hero-custom-svg {
+  width: 100%;
+  height: 100%;
+  min-height: 400px; /* Ensure minimum height to match text content */
+  max-width: 500px; /* Increased max width */
+  object-fit: contain; /* Use contain to show whole SVG */
+  border-radius: 1rem;
+  padding: 1rem; /* Reduced padding since SVG now has its own background */
+  transition: transform 0.3s ease;
+  overflow: hidden; /* Prevent content from extending beyond container */
+}
+
+.hero-svg:hover,
+.hero-custom-svg:hover {
+  transform: scale(1.02);
+}
+
+/* Dark theme adjustments */
+
+[data-theme='dark'] .hero-cta-primary {
+  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.3);
+}
+
+[data-theme='dark'] .hero-cta-primary:hover,
+[data-theme='dark'] .hero-cta-primary.hover-active {
+  box-shadow: 0 8px 25px rgba(230, 57, 70, 0.4);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-split-layout {
+    padding: 5rem 0 2rem 0; /* Full width padding for mobile */
+    min-height: 70vh;
+  }
+
+  .hero-container {
+    flex-direction: column !important;
+    text-align: center;
+    padding: 0 1rem;
+    gap: 2rem;
+  }
+
+  .hero-text-content {
+    text-align: center !important;
+    max-width: 100%;
+    order: 1; /* Ensure text comes first */
+  }
+
+  .hero-headline {
+    font-size: clamp(2rem, 8vw, 3rem);
+    margin-bottom: 1rem;
+  }
+
+  .hero-subheadline {
+    font-size: 1.125rem;
+    margin-bottom: 2rem;
+    max-width: 100%;
+  }
+
+  .hero-cta-buttons {
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-cta-primary,
+  .hero-cta-secondary {
+    width: 100%;
+    max-width: 280px;
+  }
+
+  .hero-illustration {
+    max-width: 100%;
+    order: 2; /* Ensure illustration comes after text */
+    display: flex !important; /* Force display on mobile */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hero-svg,
+  .hero-custom-svg {
+    max-width: 400px; /* Increased for better visibility */
+    min-height: 300px; /* Maintain good height on mobile */
+    padding: 1.5rem;
+    display: block !important; /* Ensure SVG is visible on mobile */
+    object-fit: contain; /* Maintain contain behavior on mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-split-layout {
+    padding: 4.5rem 0 1.5rem 0; /* Full width padding for small mobile */
+  }
+
+  .hero-container {
+    padding: 0 1rem;
+  }
+
+  .hero-headline {
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+  }
+
+  .hero-subheadline {
+    font-size: 1rem;
+  }
+
+  .hero-cta-primary,
+  .hero-cta-secondary {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+
+  .hero-illustration {
+    margin-top: 1rem;
+  }
+
+  .hero-svg,
+  .hero-custom-svg {
+    max-width: 350px; /* Increased for small mobile */
+    min-height: 280px; /* Maintain proportions */
+    padding: 1rem;
+    object-fit: contain; /* Ensure whole SVG is visible */
+  }
+}
+
+/* Animation for smooth entrance */
+@keyframes heroFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-split-layout {
+  animation: heroFadeIn 0.8s ease-out;
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+  .hero-split-layout,
+  .hero-cta-primary,
+  .hero-cta-secondary,
+  .hero-svg,
+  .hero-custom-svg {
+    animation: none;
+    transition: none;
+  }
+
+  .hero-cta-primary:hover,
+  .hero-cta-primary.hover-active,
+  .hero-cta-secondary:hover,
+  .hero-cta-secondary.hover-active {
+    transform: none;
+  }
+}
+
+/* Focus styles for accessibility */
+.hero-cta-primary:focus,
+.hero-cta-secondary:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+[data-theme='dark'] .hero-cta-primary:focus,
+[data-theme='dark'] .hero-cta-secondary:focus {
+  outline-color: var(--accent);
+}

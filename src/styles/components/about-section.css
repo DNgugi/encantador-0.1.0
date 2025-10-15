@@ -1,0 +1,677 @@
+/* About Section Styles */
+
+.about-section {
+  padding: 4rem 0;
+  background: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-full-width-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.about-content {
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Legacy support for split layout (if needed) */
+.about-split-layout {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  min-height: 600px;
+}
+
+.about-split-layout .about-content {
+  flex: 1;
+  max-width: 600px;
+}
+
+.about-team-illustration {
+  flex: 1;
+  max-width: 500px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.team-illustration-svg {
+  width: 100%;
+  height: auto;
+  max-width: 450px;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.1));
+}
+
+/* About Header */
+.about-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.about-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+  background: var(--gradient-primary);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.about-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* About Story */
+.about-story {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.about-story-text {
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  max-width: 700px; /* Limit line length for better readability on desktop */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Founders Section */
+.about-founders {
+  margin-bottom: 3rem;
+}
+
+.founders-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.founders-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.founder-profile-card {
+  background: var(--surface);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
+.founder-profile-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.founder-header {
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--primary);
+}
+
+.founder-name {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.founder-title {
+  font-size: 0.95rem;
+  color: var(--secondary);
+  font-weight: 500;
+}
+
+.founder-background {
+  margin-bottom: 1.5rem;
+}
+
+.founder-background p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: var(--text-primary);
+}
+
+.founder-certifications h5 {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+}
+
+.founder-certifications ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.founder-certifications li {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  padding: 0.25rem 0;
+  padding-left: 1rem;
+  position: relative;
+}
+
+.founder-certifications li::before {
+  content: '•';
+  color: var(--secondary);
+  font-weight: bold;
+  position: absolute;
+  left: 0;
+}
+
+/* Credibility Section */
+.about-credibility {
+  margin-bottom: 2rem;
+}
+
+.credibility-title {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.credibility-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.credibility-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1rem;
+  background: var(--surface);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.credibility-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.credibility-icon {
+  width: 24px;
+  height: 24px;
+  background: var(--secondary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: bold;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+.credibility-item p {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* SVG Animations */
+.hong-kong-building {
+  animation: building-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes building-glow {
+  0% {
+    opacity: 0.8;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.team-illustration-svg g {
+  animation: team-collaboration 4s ease-in-out infinite;
+}
+
+@keyframes team-collaboration {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-full-width-layout {
+    padding: 0 1rem;
+  }
+
+  .about-split-layout {
+    flex-direction: column;
+    gap: 3rem;
+    padding: 0 1rem;
+  }
+
+  .about-content {
+    text-align: center;
+    max-width: 100%;
+  }
+
+  .about-team-illustration {
+    max-width: 100%;
+    order: -1; /* Show illustration first on mobile */
+  }
+
+  .founders-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .credibility-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about-title {
+    font-size: 2rem;
+  }
+
+  .founders-title,
+  .credibility-title {
+    font-size: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 2rem 0;
+  }
+
+  .about-split-layout {
+    gap: 2rem;
+  }
+
+  .founder-profile-card,
+  .credibility-item {
+    padding: 1rem;
+  }
+
+  .team-illustration-svg {
+    max-width: 350px;
+  }
+}
+
+/* Dark theme adjustments */
+[data-theme='dark'] .founder-profile-card,
+[data-theme='dark'] .credibility-item {
+  background: var(--surface);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .founder-profile-card:hover,
+[data-theme='dark'] .credibility-item:hover {
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+[data-theme='dark'] .about-team-illustration {
+  background: rgba(30, 41, 59, 0.9) !important;
+  border-color: rgba(196, 30, 58, 0.3) !important;
+}
+
+/* Performance optimizations */
+.about-split-layout {
+  contain: layout style;
+}
+
+.founder-profile-card,
+.credibility-item {
+  contain: layout style;
+  will-change: transform;
+}
+
+.team-illustration-svg {
+  contain: layout style paint;
+}
+
+/* Enhanced Founder Profile Styles */
+.founder-photo-container {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.founder-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 4px solid var(--primary);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: var(--surface);
+}
+
+.founder-header {
+  text-align: center;
+}
+
+/* Founder Experience and Achievements */
+.founder-experience,
+.founder-achievements,
+.founder-expertise {
+  margin-bottom: 1rem;
+  padding: 0.75rem;
+  background: rgba(196, 30, 58, 0.05);
+  border-radius: 0.5rem;
+  border-left: 3px solid var(--primary);
+}
+
+.founder-experience h5,
+.founder-achievements h5,
+.founder-expertise h5 {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.founder-experience p,
+.founder-achievements p,
+.founder-expertise p {
+  font-size: 0.85rem;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+/* Enhanced Certifications */
+.certifications-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.certification-badge {
+  display: inline-block;
+  background: var(--secondary);
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.certification-badge:hover {
+  background: var(--primary);
+}
+
+/* Credibility Metrics */
+.credibility-metrics {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: var(--surface);
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.credibility-metric {
+  text-align: center;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: rgba(45, 134, 89, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.credibility-metric:hover {
+  transform: translateY(-2px);
+}
+
+.metric-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 0.25rem;
+}
+
+.metric-label {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+/* Credibility Groups */
+.credibility-groups {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.credibility-group {
+  background: var(--surface);
+  padding: 1.5rem;
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.group-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--secondary);
+}
+
+.key-credential {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: rgba(45, 134, 89, 0.05);
+  border-radius: 0.5rem;
+  border-left: 3px solid var(--secondary);
+}
+
+.trust-indicator {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+}
+
+.trust-icon {
+  font-size: 1.25rem;
+  flex-shrink: 0;
+  margin-top: 0.125rem;
+}
+
+/* Testimonials */
+.credibility-testimonials {
+  margin-top: 2rem;
+}
+
+.testimonials-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-item {
+  text-align: center;
+  padding: 1.5rem;
+  background: rgba(196, 30, 58, 0.02);
+  border-radius: 0.75rem;
+  border: 1px solid rgba(196, 30, 58, 0.1);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.testimonial-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(196, 30, 58, 0.1);
+}
+
+.testimonial-quote {
+  font-size: 1.125rem;
+  font-style: italic;
+  color: var(--text-primary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.testimonial-quote::before {
+  content: '"';
+  font-size: 3rem;
+  color: var(--primary);
+  position: absolute;
+  left: -1rem;
+  top: -0.5rem;
+}
+
+.testimonial-quote::after {
+  content: '"';
+  font-size: 3rem;
+  color: var(--primary);
+  position: absolute;
+  right: -1rem;
+  bottom: -1rem;
+}
+
+.testimonial-author {
+  display: block;
+  font-style: normal;
+}
+
+.author-name {
+  font-weight: 600;
+  color: var(--primary);
+}
+
+.author-company {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+.author-name::after {
+  content: ' - ';
+  color: var(--text-secondary);
+}
+
+/* Enhanced responsive design for credibility features */
+@media (max-width: 768px) {
+  .credibility-metrics {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1rem;
+  }
+
+  .credibility-groups {
+    grid-template-columns: 1fr;
+  }
+
+  .founders-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .founder-photo {
+    width: 100px;
+    height: 100px;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+
+  .testimonial-item {
+    padding: 1rem;
+  }
+
+  .testimonial-quote {
+    font-size: 1rem;
+  }
+
+  .testimonial-quote::before,
+  .testimonial-quote::after {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .credibility-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .metric-value {
+    font-size: 1.5rem;
+  }
+
+  .founder-experience,
+  .founder-achievements,
+  .founder-expertise {
+    padding: 0.5rem;
+  }
+}
+
+/* Dark theme adjustments for credibility features */
+[data-theme='dark'] .credibility-metric,
+[data-theme='dark'] .key-credential,
+[data-theme='dark'] .founder-experience,
+[data-theme='dark'] .founder-achievements,
+[data-theme='dark'] .founder-expertise {
+  background: rgba(45, 134, 89, 0.1);
+}
+
+[data-theme='dark'] .credibility-metrics,
+[data-theme='dark'] .credibility-group {
+  background: var(--surface);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .founder-photo {
+  border-color: var(--primary);
+}
+
+[data-theme='dark'] .testimonial-item {
+  background: rgba(230, 57, 70, 0.05);
+  border-color: rgba(230, 57, 70, 0.2);
+}
+
+[data-theme='dark'] .testimonial-item:hover {
+  box-shadow: 0 4px 12px rgba(230, 57, 70, 0.2);
+}

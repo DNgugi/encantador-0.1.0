@@ -1,0 +1,185 @@
+{
+  "site": {
+    "title": "Studio Encantador - 香港商业咨询",
+    "description": "精品咨询公司，在香港提供商业咨询、网站开发和团队建设服务"
+  },
+  "navigation": {
+    "home": "首页",
+    "services": "服务",
+    "about": "关于我们",
+    "portfolio": "作品集",
+    "contact": "联系我们"
+  },
+  "hero": {
+    "headline": "专业咨询服务，助您业务转型",
+    "subheadline": "香港精品咨询公司，专注商业策略、网站开发及团队建设",
+    "cta": {
+      "primary": "立即开始",
+      "secondary": "了解更多"
+    }
+  },
+  "welcome": "欢迎来到 Studio Encantador",
+  "description": "香港商业咨询机构",
+  "services": {
+    "title": "我们的服务",
+    "subtitle": "为香港企业提供全面的商业解决方案",
+    "consulting": {
+      "title": "商业咨询",
+      "description": "提供战略指导，协助您转型业务运营并推动香港市场增长。我们的AI增强方法论提供更深入的洞察，同时专注于人类专业知识和实用解决方案。",
+      "features": [
+        "市场分析与策略",
+        "流程优化配合AI洞察",
+        "数字化转型规划",
+        "绩效分析与报告"
+      ]
+    },
+    "web": {
+      "title": "网站开发",
+      "description": "为香港企业量身定制的现代化响应式网站和应用程序。我们运用AI工具加速开发，同时确保每个解决方案都融入人类创意和本地市场理解。",
+      "features": [
+        "全设备响应式设计",
+        "AI推荐电子商务解决方案",
+        "多语言支持 (EN/ZH-HK/ZH-CN)",
+        "性能优化与SEO"
+      ]
+    },
+    "team": {
+      "title": "团队建设",
+      "description": "运用我们经过验证的方法论，加强团队动力并改善协作。AI驱动的性格评估与传统团队建设相辅相成，创造更有效和谐的工作环境。",
+      "features": [
+        "领导力发展计划",
+        "AI洞察沟通培训",
+        "冲突解决策略",
+        "多元团队文化融合"
+      ]
+    }
+  },
+  "contact": {
+    "title": "联系我们",
+    "subtitle": "联系我们讨论您的业务需求",
+    "form": {
+      "name": {
+        "label": "全名",
+        "placeholder": "请输入您的全名",
+        "required": "姓名为必填项目",
+        "minLength": "姓名必须至少2个字符"
+      },
+      "email": {
+        "label": "邮箱地址",
+        "placeholder": "请输入您的邮箱地址",
+        "required": "邮箱为必填项目",
+        "invalid": "请输入有效的邮箱地址"
+      },
+      "phone": {
+        "label": "电话号码（可选）",
+        "placeholder": "请输入您的香港电话号码",
+        "invalid": "请输入有效的香港电话号码"
+      },
+      "message": {
+        "label": "消息",
+        "placeholder": "告诉我们您的业务需求以及我们如何协助您",
+        "required": "消息为必填项目",
+        "minLength": "消息必须至少10个字符"
+      },
+      "submit": "发送消息",
+      "submitting": "发送中...",
+      "success": "谢谢！您的消息已成功发送。我们将在24小时内回复您。",
+      "error": "抱歉，发送消息时出现错误。请重试或直接联系我们。"
+    },
+    "methods": {
+      "title": "其他联系方式",
+      "email": "邮箱联系：{email}",
+      "phone": "电话联系：{phone}",
+      "whatsapp": "WhatsApp联系：{phone}",
+      "office": "访问我们的办公室",
+      "address": "香港中环",
+      "hours": "周一至五：上午9:00 - 下午6:00"
+    }
+  },
+  "team": {
+    "count": "我们有 {count} 位团队成员"
+  },
+  "search": {
+    "placeholder": "搜索我们的服务..."
+  },
+  "button": {
+    "help": "获取帮助和支持"
+  },
+  "about": {
+    "title": "关于 Studio Encantador",
+    "subtitle": "香港商业咨询卓越服务",
+    "story": "Studio Encantador 成立于2025年1月，是一家精品咨询公司，结合人类专业知识与AI增强方法论，为香港企业提供卓越成果。我们相信战略思维、创新技术和文化理解的力量，能够转型组织并推动可持续增长。",
+    "founders": {
+      "title": "认识我们的创始人",
+      "profiles": [
+        {
+          "name": "陈志明 Alex Chen",
+          "title": "董事总经理兼商业战略主管",
+          "background": "前麦肯锡顾问，拥有8年以上香港市场分析和数字化转型经验。专精于战略规划、流程优化和AI增强商业智能。",
+          "certifications": ["香港科技大学MBA", "认证管理顾问", "AI战略认证"]
+        },
+        {
+          "name": "黄美莎 Sarah Wong",
+          "title": "技术总监兼创新主管",
+          "background": "全栈开发人员和团队建设专家，拥有现代网络技术和组织心理学专业知识。热衷于创造增强人类协作的数字解决方案。",
+          "certifications": [
+            "计算机科学学位",
+            "认证Scrum Master",
+            "团队动力学认证"
+          ]
+        }
+      ]
+    },
+    "credibility": {
+      "title": "为何选择 Studio Encantador",
+      "elements": [
+        "深厚的香港市场知识和文化专业",
+        "AI增强咨询方法论提供数据驱动洞察",
+        "业务转型和增长的成功记录",
+        "具备国际和本地经验的双语团队"
+      ]
+    }
+  },
+  "portfolio": {
+    "title": "我们的作品集",
+    "subtitle": "为香港企业提供可衡量成果的真实项目",
+    "filterAll": "所有项目",
+    "filterConsulting": "商业咨询",
+    "filterWeb": "网站开发",
+    "filterTeam": "团队发展",
+    "viewDetails": "查看详情",
+    "closeModal": "关闭",
+    "projectTimeline": "项目时间表",
+    "keyLearnings": "关键学习",
+    "technologies": "使用技术",
+    "methodology": "方法论"
+  },
+  "footer": {
+    "description": "香港精品咨询公司，专注商业策略、网站开发及团队建设。以专业指导和创新解决方案转型企业。",
+    "established": "成立于 2025",
+    "location": "香港",
+    "services": {
+      "title": "我们的服务",
+      "consulting": "商业咨询",
+      "web": "网站开发",
+      "team": "团队建设",
+      "strategy": "数字策略"
+    },
+    "company": {
+      "title": "公司",
+      "about": "关于我们",
+      "portfolio": "作品集",
+      "contact": "联系我们",
+      "careers": "职业机会"
+    },
+    "contact": {
+      "title": "联系我们",
+      "address": "香港中环"
+    },
+    "copyright": "版权所有。",
+    "legal": {
+      "privacy": "隐私政策",
+      "terms": "服务条款"
+    }
+  }
+}

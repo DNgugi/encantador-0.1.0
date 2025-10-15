@@ -1,0 +1,136 @@
+/* Language Switcher Component Styles */
+.language-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.language-switcher__container {
+  display: flex;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 0.75rem;
+  padding: 0.25rem;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.lang-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.5rem;
+  height: 2rem;
+  padding: 0.25rem 0.75rem;
+  border: none;
+  border-radius: 0.5rem;
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.lang-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+  color: var(--text-primary);
+  transform: translateY(-1px);
+}
+
+.lang-btn:active {
+  transform: translateY(0);
+}
+
+.lang-btn.active {
+  background: var(--gradient-primary);
+  color: white;
+  box-shadow: 0 2px 8px rgba(196, 30, 58, 0.3);
+}
+
+.lang-btn.active:hover {
+  background: var(--gradient-primary);
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(196, 30, 58, 0.4);
+}
+
+/* Focus states for accessibility */
+.lang-btn:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px var(--primary);
+}
+
+.lang-btn:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Smooth transition animations */
+.language-transitioning {
+  pointer-events: none;
+}
+
+.language-transitioning * {
+  transition:
+    opacity 0.3s ease-in-out,
+    transform 0.3s ease-in-out;
+}
+
+/* Dark theme adjustments */
+[data-theme='dark'] .language-switcher__container {
+  background: rgba(0, 0, 0, 0.3);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+[data-theme='dark'] .lang-btn:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* Hong Kong cultural enhancement - Jade glow effect */
+.lang-btn[data-lang='zh-hk']:hover,
+.lang-btn[data-lang='zh-cn']:hover {
+  box-shadow: 0 0 12px rgba(45, 134, 89, 0.3);
+}
+
+.lang-btn[data-lang='zh-hk'].active,
+.lang-btn[data-lang='zh-cn'].active {
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
+  box-shadow: 0 2px 8px rgba(45, 134, 89, 0.3);
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .language-switcher__container {
+    padding: 0.125rem;
+  }
+
+  .lang-btn {
+    min-width: 2rem;
+    height: 1.75rem;
+    font-size: 0.75rem;
+    padding: 0.125rem 0.5rem;
+  }
+}
+
+/* Animation for language switching */
+@keyframes language-switch {
+  0% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translateY(-2px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.lang-btn.switching {
+  animation: language-switch 0.3s ease-in-out;
+}

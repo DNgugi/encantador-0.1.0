@@ -1,0 +1,1207 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Encantador - Final Design Mockup</title>
+    <!-- Updated Font Pairings -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <style>
+      /* Hong Kong Cultural Color System - Toned Down */
+      :root {
+        --primary: #c41e3a;
+        --primary-light: #e63946;
+        --secondary: #2d8659;
+        --secondary-light: #52b788;
+        --accent: #e6c200;
+        --highlight: #a8336b;
+        --background: #f8f8ff;
+        --surface: #ffffff;
+        --text-primary: #1a1a1a;
+        --text-secondary: #666666;
+
+        --gradient-primary: linear-gradient(
+          135deg,
+          var(--primary),
+          var(--highlight)
+        );
+        --gradient-secondary: linear-gradient(
+          45deg,
+          var(--secondary),
+          var(--accent)
+        );
+        --gradient-harbour: linear-gradient(
+          180deg,
+          #7fb3d3 0%,
+          var(--secondary) 100%
+        );
+      }
+
+      [data-theme='dark'] {
+        --primary: #e63946;
+        --secondary: #52b788;
+        --accent: #d4a574;
+        --highlight: #d63384;
+        --background: #0f172a;
+        --surface: #1e293b;
+        --text-primary: #f1f5f9;
+        --text-secondary: #cbd5e1;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: all 0.3s ease;
+      }
+
+      body {
+        font-family: 'Source Sans 3', system-ui, sans-serif;
+        background: var(--background);
+        color: var(--text-primary);
+        line-height: 1.6;
+      }
+
+      .chinese-text {
+        font-family: 'Noto Sans SC', 'PingFang SC', system-ui, sans-serif;
+        letter-spacing: 0.03em;
+      }
+
+      /* Traditional Card Design */
+      .service-card {
+        background: var(--surface);
+        padding: 2rem;
+        border-radius: 1rem;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+        cursor: pointer;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        border: 1px solid rgba(0, 0, 0, 0.05);
+      }
+
+      .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 20px 40px rgba(196, 30, 58, 0.15);
+      }
+
+      /* Hong Kong Inspired Animations */
+      @keyframes harbour-wave {
+        0% {
+          transform: translateX(-100%) scaleY(1);
+        }
+        50% {
+          transform: translateX(0%) scaleY(1.2);
+        }
+        100% {
+          transform: translateX(100%) scaleY(1);
+        }
+      }
+
+      @keyframes peak-tram-slide {
+        0% {
+          transform: translateX(-100%) rotate(-15deg);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0%) rotate(0deg);
+          opacity: 1;
+        }
+      }
+
+      @keyframes jade-glow {
+        0%,
+        100% {
+          box-shadow: 0 0 0 rgba(45, 134, 89, 0);
+        }
+        50% {
+          box-shadow: 0 0 30px rgba(45, 134, 89, 0.4);
+        }
+      }
+
+      .animate-harbour-wave {
+        animation: harbour-wave 3s ease-in-out infinite;
+      }
+
+      .animate-peak-tram {
+        animation: peak-tram-slide 0.8s ease-out;
+      }
+
+      .animate-jade-glow {
+        animation: jade-glow 2s ease-in-out infinite;
+      }
+
+      /* Layout Styles */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem;
+      }
+
+      .header {
+        background: var(--surface);
+        padding: 1rem 0;
+        box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 100;
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-size: 1.5rem;
+        font-weight: 600;
+        color: var(--primary);
+        text-decoration: none;
+      }
+
+      .logo-icon {
+        width: 32px;
+        height: 32px;
+        color: var(--primary);
+      }
+
+      .nav {
+        display: flex;
+        gap: 2rem;
+        list-style: none;
+      }
+
+      .nav a {
+        text-decoration: none;
+        color: var(--text-primary);
+        font-weight: 500;
+        transition: color 0.3s ease;
+        padding: 0.5rem 0;
+      }
+
+      .nav a:hover {
+        color: var(--primary);
+      }
+
+      .controls {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+
+      .theme-toggle,
+      .lang-btn {
+        background: none;
+        border: 1px solid var(--text-secondary);
+        padding: 0.5rem 1rem;
+        border-radius: 0.5rem;
+        color: var(--text-primary);
+        cursor: pointer;
+        font-size: 0.875rem;
+        transition: all 0.3s ease;
+      }
+
+      .theme-toggle:hover,
+      .lang-btn:hover {
+        border-color: var(--primary);
+        background: rgba(196, 30, 58, 0.1);
+      }
+
+      /* Hero Section with undraw.co style */
+      .hero {
+        padding: 4rem 0;
+        background: var(--gradient-harbour);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .hero-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .hero-text {
+        text-align: left;
+      }
+
+      .hero h1 {
+        font-size: 3.5rem;
+        font-weight: 700;
+        margin-bottom: 1rem;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        color: var(--text-secondary);
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 1rem 2rem;
+        border: none;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        cursor: pointer;
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary {
+        background: var(--gradient-primary);
+        color: white;
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: var(--primary);
+        border: 2px solid var(--primary);
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      }
+
+      /* Undraw.co Style SVG Container */
+      .hero-illustration {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .undraw-svg {
+        max-width: 100%;
+        height: auto;
+        background: rgba(255, 255, 255, 0.9);
+        border-radius: 1rem;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border: 2px solid rgba(196, 30, 58, 0.1);
+      }
+
+      .services {
+        padding: 4rem 0;
+      }
+
+      .section-title {
+        text-align: center;
+        margin-bottom: 3rem;
+      }
+
+      .section-title h2 {
+        font-size: 2.5rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+      }
+
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+
+      .service-icon {
+        width: 4rem;
+        height: 4rem;
+        margin: 0 auto 1rem;
+        background: var(--gradient-secondary);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.5rem;
+      }
+
+      /* About Section with undraw.co style */
+      .about {
+        padding: 4rem 0;
+        background: var(--surface);
+      }
+
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+        align-items: center;
+      }
+
+      .cultural-elements {
+        padding: 4rem 0;
+      }
+
+      .pattern-showcase {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+
+      .pattern-item {
+        height: 150px;
+        border-radius: 1rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Clean Victoria Harbour Wave Pattern */
+      .harbour-pattern {
+        background: var(--gradient-harbour);
+        position: relative;
+      }
+
+      .harbour-pattern::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          90deg,
+          transparent 0%,
+          rgba(255, 255, 255, 0.2) 25%,
+          transparent 50%,
+          rgba(255, 255, 255, 0.2) 75%,
+          transparent 100%
+        );
+        animation: harbour-wave 4s ease-in-out infinite;
+      }
+
+      /* IFC Tower Pattern */
+      .ifc-pattern {
+        background: linear-gradient(
+          to top,
+          var(--primary) 0%,
+          var(--accent) 100%
+        );
+        position: relative;
+      }
+
+      .ifc-pattern::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 80%;
+        background: rgba(0, 0, 0, 0.4);
+        clip-path: polygon(
+          0% 100%,
+          10% 90%,
+          15% 90%,
+          15% 70%,
+          20% 70%,
+          20% 50%,
+          25% 50%,
+          25% 15%,
+          30% 15%,
+          30% 60%,
+          40% 60%,
+          40% 40%,
+          50% 40%,
+          50% 25%,
+          55% 25%,
+          55% 65%,
+          70% 65%,
+          70% 45%,
+          80% 45%,
+          80% 75%,
+          90% 75%,
+          90% 85%,
+          100% 85%,
+          100% 100%
+        );
+      }
+
+      /* Hong Kong Hills Pattern */
+      .hills-pattern {
+        background: linear-gradient(
+          135deg,
+          var(--secondary) 0%,
+          var(--accent) 100%
+        );
+        position: relative;
+      }
+
+      .hills-pattern::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 60%;
+        background: rgba(0, 0, 0, 0.2);
+        clip-path: polygon(
+          0% 100%,
+          0% 70%,
+          15% 50%,
+          25% 40%,
+          35% 45%,
+          50% 30%,
+          65% 35%,
+          80% 25%,
+          90% 40%,
+          100% 35%,
+          100% 100%
+        );
+      }
+
+      /* Clean Jade Pattern */
+      .jade-pattern {
+        background: var(--gradient-secondary);
+        position: relative;
+      }
+
+      .jade-pattern::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background:
+          linear-gradient(
+            45deg,
+            transparent 30%,
+            rgba(255, 255, 255, 0.1) 50%,
+            transparent 70%
+          ),
+          linear-gradient(
+            -45deg,
+            transparent 30%,
+            rgba(255, 255, 255, 0.1) 50%,
+            transparent 70%
+          );
+        background-size: 20px 20px;
+      }
+
+      /* Responsive Design */
+      @media (max-width: 768px) {
+        .nav {
+          display: none;
+        }
+
+        .hero h1 {
+          font-size: 2.5rem;
+        }
+
+        .hero-content,
+        .about-content {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .cta-buttons {
+          justify-content: center;
+        }
+      }
+
+      /* Dark mode styles */
+      [data-theme='dark'] .header {
+        background: var(--surface);
+      }
+
+      [data-theme='dark'] .service-card {
+        background: var(--surface);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header with Navigation -->
+    <header class="header">
+      <div class="container">
+        <div class="header-content">
+          <a href="#" class="logo">
+            <i data-lucide="shapes" class="logo-icon"></i>
+            Studio Encantador
+          </a>
+          <nav>
+            <ul class="nav">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#portfolio">Portfolio</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </nav>
+          <div class="controls">
+            <button class="lang-btn" onclick="toggleLanguage()">
+              🇭🇰 繁體中文
+            </button>
+            <button class="theme-toggle" onclick="toggleTheme()">
+              🌙 Dark
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section with undraw.co style illustration -->
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1 class="animate-peak-tram">
+              Transform Your Business with AI-Enhanced Consulting
+            </h1>
+            <p>
+              Hong Kong's boutique consulting agency combining human expertise
+              with strategic AI implementation
+            </p>
+            <div class="cta-buttons">
+              <a href="#contact" class="btn btn-primary"
+                >Start Your Transformation</a
+              >
+              <a href="#services" class="btn btn-secondary">Learn More</a>
+            </div>
+          </div>
+          <div class="hero-illustration">
+            <!-- Undraw.co style business consulting SVG -->
+            <svg
+              class="undraw-svg"
+              width="400"
+              height="300"
+              viewBox="0 0 400 300"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <!-- Background elements -->
+              <ellipse
+                cx="200"
+                cy="280"
+                rx="150"
+                ry="20"
+                fill="#e6c200"
+                opacity="0.2"
+              />
+
+              <!-- Desk -->
+              <rect
+                x="50"
+                y="200"
+                width="300"
+                height="15"
+                rx="7"
+                fill="#8B4513"
+              />
+              <rect
+                x="60"
+                y="215"
+                width="280"
+                height="8"
+                rx="4"
+                fill="#654321"
+              />
+
+              <!-- Laptop -->
+              <rect
+                x="120"
+                y="180"
+                width="80"
+                height="50"
+                rx="4"
+                fill="#2d8659"
+              />
+              <rect
+                x="125"
+                y="185"
+                width="70"
+                height="40"
+                rx="2"
+                fill="#52b788"
+              />
+              <rect
+                x="130"
+                y="190"
+                width="60"
+                height="30"
+                rx="1"
+                fill="#ffffff"
+              />
+
+              <!-- Charts on laptop screen -->
+              <rect x="135" y="195" width="15" height="20" fill="#c41e3a" />
+              <rect x="155" y="200" width="15" height="15" fill="#e6c200" />
+              <rect x="175" y="197" width="15" height="18" fill="#2d8659" />
+
+              <!-- Person 1 (sitting) -->
+              <ellipse cx="160" cy="170" rx="15" ry="20" fill="#fdbcb4" />
+              <circle cx="160" cy="150" r="12" fill="#fdbcb4" />
+              <path
+                d="M148 155 Q160 145 172 155"
+                stroke="#8B4513"
+                stroke-width="3"
+                fill="none"
+              />
+              <rect
+                x="150"
+                y="170"
+                width="20"
+                height="30"
+                rx="10"
+                fill="#c41e3a"
+              />
+
+              <!-- Person 2 (standing) -->
+              <ellipse cx="250" cy="140" rx="15" ry="35" fill="#fdbcb4" />
+              <circle cx="250" cy="110" r="12" fill="#fdbcb4" />
+              <path
+                d="M238 115 Q250 105 262 115"
+                stroke="#654321"
+                stroke-width="3"
+                fill="none"
+              />
+              <rect
+                x="240"
+                y="140"
+                width="20"
+                height="40"
+                rx="10"
+                fill="#2d8659"
+              />
+
+              <!-- Arms -->
+              <ellipse
+                cx="235"
+                cy="155"
+                rx="8"
+                ry="20"
+                fill="#fdbcb4"
+                transform="rotate(-20 235 155)"
+              />
+              <ellipse
+                cx="265"
+                cy="155"
+                rx="8"
+                ry="20"
+                fill="#fdbcb4"
+                transform="rotate(20 265 155)"
+              />
+
+              <!-- Documents -->
+              <rect
+                x="220"
+                y="185"
+                width="40"
+                height="30"
+                rx="2"
+                fill="#ffffff"
+                stroke="#e6c200"
+                stroke-width="2"
+              />
+              <line
+                x1="225"
+                y1="195"
+                x2="255"
+                y2="195"
+                stroke="#c41e3a"
+                stroke-width="2"
+              />
+              <line
+                x1="225"
+                y1="200"
+                x2="250"
+                y2="200"
+                stroke="#2d8659"
+                stroke-width="2"
+              />
+              <line
+                x1="225"
+                y1="205"
+                x2="245"
+                y2="205"
+                stroke="#a8336b"
+                stroke-width="2"
+              />
+
+              <!-- AI/Tech elements -->
+              <circle cx="320" cy="120" r="25" fill="#e6c200" opacity="0.3" />
+              <circle cx="320" cy="120" r="15" fill="#c41e3a" opacity="0.5" />
+              <circle cx="320" cy="120" r="8" fill="#2d8659" />
+
+              <!-- Floating icons -->
+              <circle cx="80" cy="100" r="8" fill="#a8336b" opacity="0.6" />
+              <rect x="76" y="96" width="8" height="8" fill="#ffffff" />
+
+              <circle cx="350" cy="180" r="6" fill="#52b788" opacity="0.7" />
+              <polygon points="347,177 353,177 350,183" fill="#ffffff" />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Services</h2>
+          <p class="chinese-text">我们的服务</p>
+        </div>
+
+        <div class="services-grid">
+          <div class="service-card animate-jade-glow">
+            <div class="service-icon">🏢</div>
+            <h3>Business Consulting</h3>
+            <p class="chinese-text">商业咨询</p>
+            <p>
+              Strategic guidance enhanced by AI insights for Hong Kong market
+              dynamics
+            </p>
+          </div>
+
+          <div
+            class="service-card animate-jade-glow"
+            style="animation-delay: 0.2s"
+          >
+            <div class="service-icon">💻</div>
+            <h3>Web Development</h3>
+            <p class="chinese-text">网站开发</p>
+            <p>
+              Custom web solutions that reflect Hong Kong's dynamic business
+              culture
+            </p>
+          </div>
+
+          <div
+            class="service-card animate-jade-glow"
+            style="animation-delay: 0.4s"
+          >
+            <div class="service-icon">🤝</div>
+            <h3>Team Building</h3>
+            <p class="chinese-text">团队建设</p>
+            <p>
+              Building cohesive teams adapted to Hong Kong's multicultural
+              environment
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section with undraw.co style illustration -->
+    <section class="about">
+      <div class="container">
+        <div class="about-content">
+          <div>
+            <h2>About Studio Encantador</h2>
+            <p class="chinese-text">关于魅力工作室</p>
+            <p style="margin: 1rem 0">
+              Founded in January 2025 in Hong Kong, Studio Encantador emerged
+              from the vision of creating a consulting agency that bridges
+              traditional business wisdom with modern AI capabilities.
+            </p>
+            <p>
+              We empower Hong Kong businesses with AI-enhanced solutions while
+              maintaining the human touch that drives real transformation.
+            </p>
+          </div>
+          <div>
+            <!-- Undraw.co style team illustration -->
+            <svg
+              width="350"
+              height="250"
+              viewBox="0 0 350 250"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <!-- Background -->
+              <ellipse
+                cx="175"
+                cy="230"
+                rx="120"
+                ry="15"
+                fill="#e6c200"
+                opacity="0.2"
+              />
+
+              <!-- Team of 3 people -->
+              <!-- Person 1 -->
+              <circle cx="120" cy="120" r="15" fill="#fdbcb4" />
+              <path
+                d="M105 125 Q120 115 135 125"
+                stroke="#8B4513"
+                stroke-width="3"
+                fill="none"
+              />
+              <rect
+                x="110"
+                y="135"
+                width="20"
+                height="40"
+                rx="10"
+                fill="#c41e3a"
+              />
+              <ellipse
+                cx="105"
+                cy="150"
+                rx="8"
+                ry="18"
+                fill="#fdbcb4"
+                transform="rotate(-15 105 150)"
+              />
+              <ellipse
+                cx="135"
+                cy="150"
+                rx="8"
+                ry="18"
+                fill="#fdbcb4"
+                transform="rotate(15 135 150)"
+              />
+
+              <!-- Person 2 (center) -->
+              <circle cx="175" cy="110" r="15" fill="#fdbcb4" />
+              <path
+                d="M160 115 Q175 105 190 115"
+                stroke="#654321"
+                stroke-width="3"
+                fill="none"
+              />
+              <rect
+                x="165"
+                y="125"
+                width="20"
+                height="40"
+                rx="10"
+                fill="#2d8659"
+              />
+              <ellipse
+                cx="160"
+                cy="140"
+                rx="8"
+                ry="18"
+                fill="#fdbcb4"
+                transform="rotate(-10 160 140)"
+              />
+              <ellipse
+                cx="190"
+                cy="140"
+                rx="8"
+                ry="18"
+                fill="#fdbcb4"
+                transform="rotate(10 190 140)"
+              />
+
+              <!-- Person 3 -->
+              <circle cx="230" cy="120" r="15" fill="#fdbcb4" />
+              <path
+                d="M215 125 Q230 115 245 125"
+                stroke="#2F4F4F"
+                stroke-width="3"
+                fill="none"
+              />
+              <rect
+                x="220"
+                y="135"
+                width="20"
+                height="40"
+                rx="10"
+                fill="#a8336b"
+              />
+              <ellipse
+                cx="215"
+                cy="150"
+                rx="8"
+                ry="18"
+                fill="#fdbcb4"
+                transform="rotate(-15 215 150)"
+              />
+              <ellipse
+                cx="245"
+                cy="150"
+                rx="8"
+                ry="18"
+                fill="#fdbcb4"
+                transform="rotate(15 245 150)"
+              />
+
+              <!-- Connection lines -->
+              <line
+                x1="135"
+                y1="140"
+                x2="160"
+                y2="130"
+                stroke="#e6c200"
+                stroke-width="3"
+                opacity="0.6"
+              />
+              <line
+                x1="190"
+                y1="130"
+                x2="215"
+                y2="140"
+                stroke="#e6c200"
+                stroke-width="3"
+                opacity="0.6"
+              />
+
+              <!-- Hong Kong elements -->
+              <rect
+                x="50"
+                y="80"
+                width="8"
+                height="30"
+                fill="#c41e3a"
+                opacity="0.7"
+              />
+              <rect
+                x="60"
+                y="70"
+                width="6"
+                height="40"
+                fill="#2d8659"
+                opacity="0.7"
+              />
+              <rect
+                x="68"
+                y="60"
+                width="10"
+                height="50"
+                fill="#e6c200"
+                opacity="0.7"
+              />
+
+              <rect
+                x="280"
+                y="75"
+                width="6"
+                height="35"
+                fill="#a8336b"
+                opacity="0.7"
+              />
+              <rect
+                x="290"
+                y="65"
+                width="8"
+                height="45"
+                fill="#c41e3a"
+                opacity="0.7"
+              />
+              <rect
+                x="300"
+                y="55"
+                width="12"
+                height="55"
+                fill="#2d8659"
+                opacity="0.7"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Cultural Design Elements Showcase -->
+    <section class="cultural-elements">
+      <div class="container">
+        <div class="section-title">
+          <h2>Hong Kong Cultural Design Elements</h2>
+          <p class="chinese-text">香港文化设计元素</p>
+        </div>
+
+        <div class="pattern-showcase">
+          <div class="pattern-item harbour-pattern">
+            <div
+              style="
+                position: absolute;
+                bottom: 1rem;
+                left: 1rem;
+                color: white;
+                font-weight: 600;
+              "
+            >
+              Victoria Harbour Waves
+              <div class="chinese-text" style="font-size: 0.875rem">
+                维多利亚港波浪
+              </div>
+            </div>
+          </div>
+
+          <div class="pattern-item ifc-pattern">
+            <div
+              style="
+                position: absolute;
+                bottom: 1rem;
+                left: 1rem;
+                color: white;
+                font-weight: 600;
+              "
+            >
+              IFC Tower Skyline
+              <div class="chinese-text" style="font-size: 0.875rem">
+                国际金融中心天际线
+              </div>
+            </div>
+          </div>
+
+          <div class="pattern-item hills-pattern">
+            <div
+              style="
+                position: absolute;
+                bottom: 1rem;
+                left: 1rem;
+                color: white;
+                font-weight: 600;
+              "
+            >
+              Hong Kong Hills
+              <div class="chinese-text" style="font-size: 0.875rem">
+                香港山峦
+              </div>
+            </div>
+          </div>
+
+          <div class="pattern-item jade-pattern">
+            <div
+              style="
+                position: absolute;
+                bottom: 1rem;
+                left: 1rem;
+                color: white;
+                font-weight: 600;
+              "
+            >
+              Jade Green Prosperity
+              <div class="chinese-text" style="font-size: 0.875rem">
+                翡翠绿繁荣
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Typography Showcase -->
+        <div style="margin: 3rem 0; text-align: center">
+          <h3 style="margin-bottom: 2rem">Typography Harmony</h3>
+          <div
+            style="
+              display: grid;
+              grid-template-columns: 1fr 1fr;
+              gap: 2rem;
+              text-align: left;
+            "
+          >
+            <div>
+              <h4 style="color: var(--primary); margin-bottom: 1rem">
+                English Typography
+              </h4>
+              <p style="font-size: 1.125rem; line-height: 1.6">
+                Studio Encantador combines traditional business wisdom with
+                modern AI capabilities, specifically tailored for Hong Kong's
+                unique business landscape.
+              </p>
+              <p
+                style="
+                  font-size: 0.875rem;
+                  color: var(--text-secondary);
+                  margin-top: 0.5rem;
+                "
+              >
+                Font: Source Sans 3 - Clean, professional, highly readable
+              </p>
+            </div>
+            <div>
+              <h4
+                style="color: var(--primary); margin-bottom: 1rem"
+                class="chinese-text"
+              >
+                中文字体
+              </h4>
+              <p
+                class="chinese-text"
+                style="font-size: 1.125rem; line-height: 1.7"
+              >
+                魅力工作室结合传统商业智慧与现代AI能力，专为香港独特的商业环境量身定制。
+              </p>
+              <p
+                class="chinese-text"
+                style="
+                  font-size: 0.875rem;
+                  color: var(--text-secondary);
+                  margin-top: 0.5rem;
+                "
+              >
+                字体：思源黑体 - 简洁专业，易于阅读
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // Initialize Lucide icons
+      lucide.createIcons()
+
+      let currentTheme = 'light'
+      let currentLang = 'en'
+
+      function toggleTheme() {
+        currentTheme = currentTheme === 'light' ? 'dark' : 'light'
+        document.documentElement.setAttribute('data-theme', currentTheme)
+
+        const btn = document.querySelector('.theme-toggle')
+        btn.textContent = currentTheme === 'light' ? '🌙 Dark' : '☀️ Light'
+      }
+
+      function toggleLanguage() {
+        currentLang = currentLang === 'en' ? 'zh-hk' : 'en'
+        const btn = document.querySelector('.lang-btn')
+
+        if (currentLang === 'zh-hk') {
+          btn.textContent = '🇺🇸 English'
+        } else {
+          btn.textContent = '🇭🇰 繁體中文'
+        }
+      }
+
+      // Interactive animations
+      document.addEventListener('DOMContentLoaded', function () {
+        const cards = document.querySelectorAll('.service-card')
+
+        cards.forEach((card, index) => {
+          card.addEventListener('mouseenter', function () {
+            this.style.background = `linear-gradient(135deg, var(--primary), var(--secondary))`
+            this.style.color = 'white'
+          })
+
+          card.addEventListener('mouseleave', function () {
+            this.style.background = 'var(--surface)'
+            this.style.color = 'var(--text-primary)'
+          })
+        })
+      })
+    </script>
+  </body>
+</html>

@@ -1,0 +1,349 @@
+/* Hong Kong Cultural Design Elements */
+
+/* Victoria Harbour Wave Animations */
+.harbour-wave-container {
+  position: relative;
+  width: 100%;
+  height: 8vh;
+  overflow: hidden;
+  margin: 2rem 0;
+}
+
+.harbour-wave {
+  position: absolute;
+  width: 120%;
+  height: 100%;
+  background: var(--gradient-harbour);
+  border-radius: 50px;
+  opacity: 0.7;
+  will-change: transform;
+  animation: harbour-wave 3s ease-in-out infinite;
+}
+
+.harbour-wave:nth-child(1) {
+  animation-delay: 0s;
+  height: 60%;
+  top: 40%;
+  opacity: 0.8;
+}
+
+.harbour-wave:nth-child(2) {
+  animation-delay: 0.2s;
+  height: 80%;
+  top: 20%;
+  opacity: 0.6;
+}
+
+.harbour-wave:nth-child(3) {
+  animation-delay: 0.4s;
+  height: 100%;
+  top: 0%;
+  opacity: 0.4;
+}
+
+/* Enhanced harbour wave animation */
+@keyframes harbour-wave {
+  0% {
+    transform: translateX(-100%) scaleY(1);
+  }
+  25% {
+    transform: translateX(-50%) scaleY(1.1);
+  }
+  50% {
+    transform: translateX(0%) scaleY(1.2);
+  }
+  75% {
+    transform: translateX(50%) scaleY(1.1);
+  }
+  100% {
+    transform: translateX(100%) scaleY(1);
+  }
+}
+
+/* IFC Tower Skyline */
+.ifc-tower-skyline {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  background: linear-gradient(
+    180deg,
+    var(--accent) 0%,
+    var(--primary) 50%,
+    var(--background) 100%
+  );
+  clip-path: polygon(
+    0% 100%,
+    5% 85%,
+    10% 90%,
+    15% 70%,
+    20% 75%,
+    25% 60%,
+    30% 65%,
+    35% 45%,
+    40% 50%,
+    45% 30%,
+    50% 35%,
+    55% 20%,
+    60% 25%,
+    65% 40%,
+    70% 45%,
+    75% 55%,
+    80% 60%,
+    85% 70%,
+    90% 75%,
+    95% 80%,
+    100% 100%
+  );
+  margin: 1rem 0;
+}
+
+/* Hong Kong Hills Pattern */
+.hong-kong-hills {
+  position: relative;
+  width: 100%;
+  height: 120px;
+  background: var(--secondary);
+  clip-path: polygon(
+    0% 100%,
+    10% 80%,
+    20% 85%,
+    30% 70%,
+    40% 75%,
+    50% 60%,
+    60% 65%,
+    70% 50%,
+    80% 55%,
+    90% 70%,
+    100% 100%
+  );
+  margin: 1rem 0;
+}
+
+/* Jade Green Prosperity Crosshatch Pattern */
+.jade-crosshatch {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  background-image:
+    repeating-linear-gradient(
+      45deg,
+      var(--secondary) 0px,
+      var(--secondary) 2px,
+      transparent 2px,
+      transparent 8px
+    ),
+    repeating-linear-gradient(
+      -45deg,
+      var(--secondary) 0px,
+      var(--secondary) 2px,
+      transparent 2px,
+      transparent 8px
+    );
+  opacity: 0.3;
+  margin: 1rem 0;
+}
+
+/* Cultural Patterns Container */
+.cultural-patterns {
+  position: relative;
+  width: 100%;
+  margin: 2rem 0;
+}
+
+/* Responsive Design for Cultural Elements */
+@media (max-width: 768px) {
+  .harbour-wave-container {
+    height: 6vh;
+  }
+
+  .ifc-tower-skyline {
+    height: 150px;
+    transform: scale(0.9);
+  }
+
+  .hong-kong-hills {
+    height: 90px;
+    transform: scale(0.9);
+  }
+
+  .jade-crosshatch {
+    height: 45px;
+  }
+}
+
+@media (max-width: 480px) {
+  .harbour-wave-container {
+    height: 5vh;
+  }
+
+  .ifc-tower-skyline {
+    height: 120px;
+    transform: scale(0.8);
+  }
+
+  .hong-kong-hills {
+    height: 75px;
+    transform: scale(0.8);
+  }
+
+  .jade-crosshatch {
+    height: 35px;
+  }
+}
+
+/* Animation Classes for JavaScript Control */
+.harbour-wave-animation {
+  animation: harbour-wave 3s ease-in-out infinite;
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+  .harbour-wave {
+    animation: none !important;
+    animation-play-state: paused !important;
+  }
+
+  .harbour-wave-animation {
+    animation: none !important;
+  }
+}
+
+/* High Performance Optimizations */
+.harbour-wave-container,
+.cultural-patterns {
+  contain: layout style;
+}
+
+.harbour-wave {
+  contain: layout;
+  transform: translateZ(0); /* Force hardware acceleration */
+}
+
+/* Theme-aware Cultural Elements */
+[data-theme='dark'] .ifc-tower-skyline {
+  background: linear-gradient(
+    180deg,
+    var(--accent) 0%,
+    var(--primary) 30%,
+    var(--highlight) 60%,
+    var(--background) 100%
+  );
+}
+
+[data-theme='dark'] .hong-kong-hills {
+  background: var(--secondary);
+  opacity: 0.9;
+}
+
+[data-theme='dark'] .jade-crosshatch {
+  opacity: 0.4;
+}
+
+/* Interactive Cultural Elements */
+.cultural-element-interactive {
+  cursor: pointer;
+  transition: all var(--animation-duration-normal)
+    var(--animation-easing-smooth);
+}
+
+.cultural-element-interactive:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+/* Cultural Element Utilities */
+.cultural-accent {
+  position: relative;
+}
+
+.cultural-accent::before {
+  content: '';
+  position: absolute;
+  top: -10px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-harbour);
+  border-radius: 1px;
+}
+
+.cultural-accent::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gradient-secondary);
+  border-radius: 1px;
+}
+
+/* Section Dividers with Cultural Elements */
+.section-divider-harbour {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background: var(--gradient-harbour);
+  margin: 3rem 0;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.section-divider-harbour::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  animation: jade-shimmer 2s ease-in-out infinite;
+}
+
+/* Cultural Pattern Overlays */
+.cultural-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  pointer-events: none;
+  opacity: 0.1;
+  background-image: repeating-linear-gradient(
+    30deg,
+    var(--secondary) 0px,
+    var(--secondary) 1px,
+    transparent 1px,
+    transparent 20px
+  );
+}
+
+/* Accessibility Enhancements */
+.cultural-element[aria-label] {
+  position: relative;
+}
+
+.cultural-element[aria-label]:focus {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Print Styles for Cultural Elements */
+@media print {
+  .harbour-wave-container,
+  .cultural-patterns {
+    display: none;
+  }
+
+  .ifc-tower-skyline,
+  .hong-kong-hills {
+    background: #cccccc !important;
+    clip-path: none !important;
+    height: 20px !important;
+  }
+}

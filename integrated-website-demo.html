@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Encantador - Hong Kong Business Consulting (Full Demo)</title>
+    <link rel="stylesheet" href="src/styles/main.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Source+Sans+3:ital,wght@0,200..900;1,200..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* Demo-specific styles */
+      .demo-banner {
+        background: linear-gradient(135deg, #c41e3a, #e6c200);
+        color: white;
+        text-align: center;
+        padding: 1rem;
+        font-weight: 600;
+        position: sticky;
+        top: 0;
+        z-index: 1001;
+      }
+
+      .demo-info {
+        position: fixed;
+        bottom: 1rem;
+        right: 1rem;
+        background: rgba(0, 0, 0, 0.8);
+        color: white;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        font-size: 0.875rem;
+        z-index: 1000;
+        max-width: 300px;
+      }
+
+      .demo-info h4 {
+        margin: 0 0 0.5rem 0;
+        color: #e6c200;
+      }
+
+      .demo-info p {
+        margin: 0.25rem 0;
+      }
+
+      @media (max-width: 768px) {
+        .demo-info {
+          position: relative;
+          bottom: auto;
+          right: auto;
+          margin: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="demo-banner">
+      🚀 Full Website Demo - Contact Section Integration Complete
+    </div>
+
+    <div id="app">
+      <main>
+        <!-- All sections will be rendered here by JavaScript -->
+      </main>
+    </div>
+
+    <div class="demo-info">
+      <h4>Demo Features</h4>
+      <p><strong>Language:</strong> <span id="current-language">en</span></p>
+      <p><strong>Theme:</strong> <span id="current-theme">light</span></p>
+      <p><strong>Contact Form:</strong> ✅ Integrated</p>
+      <p><strong>Contact Methods:</strong> ✅ Integrated</p>
+      <p><strong>Footer:</strong> ✅ Integrated</p>
+      <p><strong>Navigation:</strong> ✅ Working</p>
+      <p>
+        <strong>Translations:</strong>
+        <span id="translation-stats">Loading...</span>
+      </p>
+    </div>
+
+    <script type="module">
+      // Import the main application
+      import './src/js/main.js'
+
+      // Additional demo functionality
+      document.addEventListener('DOMContentLoaded', () => {
+        console.log(
+          '🎉 Full website demo loaded with contact section integration!'
+        )
+
+        // Update demo info
+        function updateDemoInfo() {
+          const currentLangElement = document.getElementById('current-language')
+          const currentThemeElement = document.getElementById('current-theme')
+
+          if (currentLangElement) {
+            currentLangElement.textContent =
+              document.documentElement.lang || 'en'
+          }
+
+          if (currentThemeElement) {
+            const theme =
+              document.documentElement.getAttribute('data-theme') || 'light'
+            currentThemeElement.textContent = theme
+          }
+        }
+
+        // Listen for language and theme changes
+        document.addEventListener('languageChanged', updateDemoInfo)
+        document.addEventListener('themeChanged', updateDemoInfo)
+
+        // Initial update
+        setTimeout(updateDemoInfo, 100)
+
+        // Test contact section functionality
+        setTimeout(() => {
+          const contactSection = document.getElementById('contact')
+          if (contactSection) {
+            console.log('✅ Contact section found and integrated successfully!')
+
+            // Test form presence
+            const contactForm = contactSection.querySelector('.contact-form')
+            if (contactForm) {
+              console.log('✅ Contact form rendered successfully!')
+            }
+
+            // Test contact methods presence
+            const contactMethods =
+              contactSection.querySelector('.contact-methods')
+            if (contactMethods) {
+              console.log('✅ Contact methods rendered successfully!')
+            }
+
+            // Test navigation link
+            const contactNavLink = document.querySelector('a[href="#contact"]')
+            if (contactNavLink) {
+              console.log('✅ Contact navigation link found!')
+            }
+          } else {
+            console.error('❌ Contact section not found!')
+          }
+
+          // Test footer functionality
+          const footer = document.querySelector('.footer')
+          if (footer) {
+            console.log('✅ Footer found and integrated successfully!')
+
+            // Test footer sections
+            const footerSections = footer.querySelectorAll('.footer-section')
+            if (footerSections.length > 0) {
+              console.log('✅ Footer sections rendered successfully!')
+            }
+
+            // Test footer navigation
+            const footerNavLinks = footer.querySelectorAll('a[href^="#"]')
+            if (footerNavLinks.length > 0) {
+              console.log('✅ Footer navigation links found!')
+            }
+          } else {
+            console.error('❌ Footer not found!')
+          }
+        }, 1000)
+      })
+    </script>
+  </body>
+</html>
